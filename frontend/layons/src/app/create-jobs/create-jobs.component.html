@@ -1,1 +1,33 @@
 <p>create-jobs works!</p>
+<form [formGroup]="createJobForm" (ngSubmit)="onSubmit()">
+  <label for="title">Enter title: </label>
+  <input formControlName="title" name="title" id="title" />
+  <label for="description">Enter Job Description: </label>
+  <textarea
+    formControlName="description"
+    name="description"
+    id="description"
+  ></textarea>
+  <label for="minpay"
+    >Enter Minimum Pay:
+    <input type="number" formControlName="minpay" name="minpay" id="minpay" />
+  </label>
+  <label for="maxpay"
+    >Enter Maximum Pay:
+    <input type="number" formControlName="maxpay" name="maxpay" id="maxpay" />
+  </label>
+  <label for="email"
+    >Enter email:
+    <input type="email" formControlName="email" name="email" id="email" />
+  </label>
+  <label for="location"
+    >Enter location:
+    <input
+      type="text"
+      formControlName="location"
+      name="location"
+      id="location"
+    />
+  </label>
+  <button [disabled]="!createJobForm.valid" type="submit">Submit</button>
+</form>
