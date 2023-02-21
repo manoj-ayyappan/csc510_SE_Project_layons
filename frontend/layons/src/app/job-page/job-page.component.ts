@@ -7,6 +7,9 @@ import { JobsService } from '../jobs.service';
 import { Job } from '../job';
 import { LogoutComponent } from '../logout/logout.component';
 
+import { JobsService } from '../jobs.service';
+import { Job } from '../job';
+
 @Component({
   selector: 'app-job-page',
   templateUrl: './job-page.component.html',
