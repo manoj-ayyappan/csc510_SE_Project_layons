@@ -7,7 +7,7 @@ import { JobPageComponent } from './job-page/job-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'create', component: CreateJobsComponent },
+  { path: 'create', title: 'Create Jobs', component: CreateJobsComponent },
   { path: 'search', component: SearchComponent },
   { path: 'job/:jobid', component: JobPageComponent },
 ];
