@@ -4,7 +4,7 @@ Feature: Create Jobs
   So that employers can create jobs
     Scenario: Create Jobs
         Given I am logged in
-        Given I am inside the Create Jobs page
+        When I am inside the Create Jobs page
         Then I am presented with a form which asks for title, job description, pay range, email, location, employer name.
         When I fill in title as "Software Engineer"
         When I fill in job description as "Good job with lots of perks"

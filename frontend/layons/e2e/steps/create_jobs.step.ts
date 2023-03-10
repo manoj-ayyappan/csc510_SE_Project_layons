@@ -5,7 +5,7 @@ let expect = chai.expect;
 
 Given('I am logged in', () => {});
 
-Given('I am inside the Create Jobs page', async () => {
+When('I am inside the Create Jobs page', async () => {
   await browser.get('http://localhost:4200/create');
   await expect(browser.getTitle()).to.eventually.equal('Create Jobs');
 });
