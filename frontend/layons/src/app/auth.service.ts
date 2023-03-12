@@ -3,18 +3,27 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 
-@Injectable({
-   providedIn: 'root'
-})
 export class AuthService {
 
    isUserLoggedIn: boolean = false;
-
+   users = [
+      {userName: 'sourabh', password: 'sourabh'},
+      {userName: 'agashe', password: 'agashe'}
+   ]
    login(userName: string, password: string): Observable<any> {
       console.log(userName);
       console.log(password);
-      this.isUserLoggedIn = userName == 'admin' && password == 'admin';
-      localStorage.setItem('isUserLoggedIn', this.isUserLoggedIn ? "true" : "false"); 
+      for(let i =0; i<this.users.length; i++){
+         if(this.users[i].userName == userName && this.users[i].password == password){
+            this.isUserLoggedIn = true;
+            localStorage.setItem('isUserLoggedIn', 'true');
+            break;
+         }
+         else{
+            this.isUserLoggedIn = false;
+            localStorage.setItem('isUserLoggedIn', 'false');
+         }
+      }
 
    return of(this.isUserLoggedIn).pipe(
       delay(1000),
@@ -25,7 +34,7 @@ export class AuthService {
    }
 
    logout(): void {
-   this.isUserLoggedIn = false;
+      this.isUserLoggedIn = false;
       localStorage.removeItem('isUserLoggedIn'); 
    }
 
