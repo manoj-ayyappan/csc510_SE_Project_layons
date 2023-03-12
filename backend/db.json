@@ -2,27 +2,63 @@
   "jobs": [
     {
       "id": 7,
+      "title": "Director, Software Development",
+      "comapany": "Doofish Mertz",
       "description": "This is a job for entry level applicants with 0-2 years experience",
-      "title": "Software Engineering 1",
-      "payrangemin": "100",
-      "payrangemax": "200",
+      "payrangemin": "100k",
+      "payrangemax": "130k",
       "email": "snaray@gmail.com",
-      "location": "remote, US"
+      "location": "Remote, US"
     },
     {
-      "title": "wq",
-      "description": "wq",
-      "payrangemax": 0,
-      "payrangemin": 0,
-      "email": "wq",
-      "location": "wq",
-      "id": 8
+      "id": 8,
+      "title": "SW Test Engineer",
+      "comapany": "Toshiba",
+      "description": "The Software Engineer contributes within the software development team to learn and aid with test of Toshiba's Point of Sale (POS) solutions in the retail marketplace along with HW Drivers by ensuring their quality, collaborating within the agile development team in a fast-paced, customer-first environment.",
+      "payrangemax": 30,
+      "payrangemin": 25,
+      "email": "manoj@gmail.com",
+      "location": "Dallas, TX"
+    },
+    {
+      "id": 9,
+      "title": "SW Test Engineer",
+      "comapany": "Toshiba",
+      "description": "Toshiba Global Commerce Solutions is seeking a self-directed software engineer with previous experience in software development, to join our team in Guadalajara, Mexico. The Software Engineer designs, builds, and supports custom software solutions for some of the world's largest retailers.",
+      "payrangemax": 30,
+      "payrangemin": 25,
+      "email": "manoj@gmail.com",
+      "location": "Durham, NC"
     }
   ],
   "users": [
     {
       "id": 1,
       "email": "sriram@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 2,
+      "email": "manoj@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 3,
+      "email": "mansi@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 4,
+      "email": "sourabh@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 5,
+      "email": "karthik@gmail.com",
       "pwd": "password",
       "profileCompleted": false
     }
