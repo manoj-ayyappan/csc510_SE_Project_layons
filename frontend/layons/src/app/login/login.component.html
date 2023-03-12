@@ -1,17 +1,12 @@
-<!-- Page Content -->
-<div>
-    <h2>Login</h2>
-    <form (ngSubmit)="onClickSubmit($event)">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" [(ngModel)]="userName" required>
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required>
-      </div>
-      <div *ngIf="error" class="error">{{ error }}</div>
-      <button type="submit">Login</button>
-    </form>
-  </div>
-  
+        <div class="login-page">
+          <div class="form">
+            <form class="login-form" (ngSubmit)="onClickSubmit()">
+              <img src="logo.png" alt="LayOns" class="logo">
+              <h1>Log in to your account</h1>
+              <input type="text" id="username" name="username" placeholder="User Name" [(ngModel)]="userName" required/>
+              <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" required/>
+              <button type="submit">Log in</button>
+              <div *ngIf="error" class="message">{{ error }}</div>
+            </form>
+          </div>
+        </div>

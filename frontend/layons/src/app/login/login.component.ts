@@ -1,16 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css'],
-// })
-// export class LoginComponent {
-//   /*Login component, get username, password and get status for applicant/employer */
-//   /*If applicant and first time logged in, display the form, else go to search jobs page*/
-//   /*Set the data about first time logged in, or to stay logged in after the first time in local storage (or) the backend */
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
@@ -25,30 +12,18 @@ export class LoginComponent implements OnInit {
 
    userName: string;
    password: string;
-   //formData: FormGroup;
    error: string;
+   isUserLoggedIn: boolean | undefined;
 
    constructor(private authService : AuthService, private router : Router) { 
     this.userName = '';
     this.password = '';
     this.error = '';
-  //   this.formData = new FormGroup({
-  //     userName: new FormControl(""),
-  //     password: new FormControl(""),
-  //  });
    }
 
-   ngOnInit() {
-      // this.formData = new FormGroup({
-      //    userName: new FormControl("admin"),
-      //    password: new FormControl("admin"),
-      // });
-   }
+   ngOnInit() {}
 
-   onClickSubmit(data: any) {
-      this.userName = data.userName;
-      this.password = data.password;
-
+   onClickSubmit() {
       console.log("Login page: " + this.userName);
       console.log("Login page: " + this.password);
 
@@ -56,7 +31,8 @@ export class LoginComponent implements OnInit {
          .subscribe( data => { 
             console.log("Is Login Success: " + data); 
       
-           if(data) this.router.navigate(['/expenses']); 
+            if(data) this.router.navigate(['/create']); 
+            else this.error = "Incorrect Credentials";
       });
    }
 }

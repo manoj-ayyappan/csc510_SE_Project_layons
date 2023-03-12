@@ -12,6 +12,7 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
 import { SearchComponent } from './search/search.component';
 import { JobPageComponent } from './job-page/job-page.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { LogoutComponent } from './logout/logout.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
