@@ -1,0 +1,46 @@
+/* profile-page.component.css */
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .profile-container {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+  
+  .profile-field {
+    margin-bottom: 1rem;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .value {
+    font-size: 1.2rem;
+  }
+  
+  .resume-link {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #005dff;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .profile-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  

@@ -1,1 +1,30 @@
-<p>create-profile works!</p>
+<h1>New Profile</h1>
+
+<form (submit)="onSubmit()" class="profile-form">
+  <div class="form-group">
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" name="firstName" [(ngModel)]="firstName" required>
+  </div>
+  <div class="form-group">
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="lastName" [(ngModel)]="lastName" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email" required>
+  </div>
+  <div class="form-group">
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" [(ngModel)]="location">
+  </div>
+  <div class="form-group">
+    <label for="skills">Skills:</label>
+    <input type="text" id="skills" name="skills" [(ngModel)]="skills">
+  </div>
+  <div class="form-group">
+    <label for="resume">Resume:</label>
+    <input type="file" id="resume" name="resume" (change)="onResumeSelected($event)">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<router-outlet></router-outlet>
