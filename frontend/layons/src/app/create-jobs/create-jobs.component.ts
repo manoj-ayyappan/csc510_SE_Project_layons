@@ -23,13 +23,6 @@ export class CreateJobsComponent {
     location: new FormControl('', Validators.required),
   });
   constructor(private jobsservice: JobsService) {}
-
-  navigate() {
-    this.jobsservice.navigate([''], {
-      state: {jobid: "jobid", jobname: "title"}
-    });
-  }
-
   onSubmit() {
     console.log(this.createJobForm.value);
     const title: string = this.createJobForm.value.title!;
