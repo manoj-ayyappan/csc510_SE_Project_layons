@@ -2,6 +2,7 @@
     max-width: 600px;
     margin: auto;
   }
+<<<<<<< HEAD
 
   .form-group_1 {
     display: flex;
@@ -9,12 +10,17 @@
     margin-bottom: 20px;
     margin-top: 100px;
   }
+=======
+>>>>>>> Add Profile Components
   
   .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+<<<<<<< HEAD
     margin-top: auto;
+=======
+>>>>>>> Add Profile Components
   }
   
   label {
