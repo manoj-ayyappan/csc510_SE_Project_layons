@@ -1,6 +1,13 @@
-<h1>New Profile</h1>
+<header class="navbar">
+  <nav>
+    <ul>
+      <!--<li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>-->
+      <h1>Create Profile</h1>
+    </ul>
+  </nav>
+</header>
 
-<form (submit)="onSubmit()" class="profile-form">
+<form (submit)="onSubmit()" class="profile-form" style="margin-top: 50px;">
   <div class="form-group">
     <label for="first-name">First Name:</label>
     <input type="text" id="first-name" name="firstName" [(ngModel)]="firstName" required>
