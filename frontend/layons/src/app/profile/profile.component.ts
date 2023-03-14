@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { ProfileService } from '../profile.service';
-<<<<<<< HEAD
 import { Router,Routes } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { LogoutComponent } from '../logout/logout.component';
 import { CreateJobsComponent } from '../create-jobs/create-jobs.component';
-=======
->>>>>>> Add Profile Components
 
 @Component({
   selector: 'app-profile',
