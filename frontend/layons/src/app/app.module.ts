@@ -11,6 +11,8 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
 import { SearchComponent } from './search/search.component';
 import { JobPageComponent } from './job-page/job-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ProfileComponent } from './profile/profile.component';
     SearchComponent,
     JobPageComponent,
     ProfileComponent,
+    EditProfileComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
