@@ -22,7 +22,7 @@ app.post('/jobs', (req, res) => {
     let job = req.body;
     job_id += 1;
     job.jobId = job_id
-    jobs_array.set("job", job);
+    jobs_array.set("title", job);
     res.send(job)
 })
 
@@ -47,12 +47,12 @@ app.post('/send-user', (req, res) => {
 app.post('/jobs/:jobid', (req, res) => {
     
     let id_req = req.body;
-    console.log(typeof(id_req));
-    res.send(jobs_array.get(id_req))
+    // console.log(typeof(id_req));
+    // test data = 3
+    res.send(jobs_array.get("3"))
 })
 
-var jobs_array = new Map();
+var jobs_array = new Map([["3", "SWE2"], ["4", "Test Engineer"]]);
 // test
-jobs_array = [["title", "SWE2","job_id", "3"]];
 var users_array = new Map();
 
