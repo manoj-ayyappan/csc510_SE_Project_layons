@@ -2,6 +2,7 @@ const express = require('express');
 const app  = express();
 let job_id = 0;
 let user_id = 0;
+let text = "";
 
 const bodyParser = require('body-parser');
 
@@ -11,38 +12,47 @@ app.use(bodyParser.json());
 app.listen(8082);
 console.log("App running! yay");
 
-app.get('/jobs', (req, res) => {
-    let title = req.params;
-    res.send(jobs_array)
-})
+// app.get('/jobs', (req, res) => {
+//     let title = req.params;
+//     res.send(jobs_array)
+// })
 
+// takes a job title and adds the job to the jobs array hashmap and returns the job
 app.post('/jobs', (req, res) => {
     let job = req.body;
     job_id += 1;
     job.jobId = job_id
-    jobs_array.push(job);
+    jobs_array.set("job", job);
     res.send(job)
 })
 
-app.get('/all-jobs', (req, res) => {
-    for (let i = 0, len = jobs_array.length, text=""; i < len; i++) {
+// get all jobs
+app.post('/all-jobs', (req, res) => {
+    for (let i = 0, len = jobs_array.length; i < len; i++) {
         text += jobs_array[i] + "<br>";
       }
     res.send(text)
 })
 
+// send user info
 app.post('/send-user', (req, res) => {
     let user = req.body;
     user_id += 1;
-    users_array.push(user_id, user);
-    res.send(users_array)
+    users_array.set("user_id", user_id);
+    users_array.set("user", user);
+    res.send(user)
   })
 
-app.get('/jobs/:jobid', (req, res) => {
+
+app.post('/jobs/:jobid', (req, res) => {
+    
     let id_req = req.body;
+    console.log(typeof(id_req));
     res.send(jobs_array.get(id_req))
 })
 
-const jobs_array = [{jobid: "3", title: "SWE2"}];
-const users_array = [];
+var jobs_array = new Map();
+// test
+jobs_array = [["title", "SWE2","job_id", "3"]];
+var users_array = new Map();
 
