@@ -19,7 +19,7 @@ export class ProfileComponent {
   }
   onLogout(){
     console.log("Logout Triggered");
-    this.router.navigateByUrl('/logout');
+    this.router.navigateByUrl('/login');
   }
   isresumeuploaded(){
     if(this.profile.resume!=null){
