@@ -29,7 +29,6 @@ export class EditProfileComponent {
   }
 
   onSave(){
-    console.log("OnSave Triggered");
     this.profile.firstName = this.firstName;
     this.profile.lastName = this.lastName;
     this.profile.email = this.email;

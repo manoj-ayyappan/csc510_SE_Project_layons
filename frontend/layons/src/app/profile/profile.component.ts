@@ -14,11 +14,9 @@ export class ProfileComponent {
     this.profile=this.profileService.getProfileData();
   }
   onClickEdit(){
-    console.log("Edit Triggered");
     this.router.navigateByUrl('/edit_profile');
   }
   onLogout(){
-    console.log("Logout Triggered");
     this.router.navigateByUrl('/login');
   }
   isresumeuploaded(){
