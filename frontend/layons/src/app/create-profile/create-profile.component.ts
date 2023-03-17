@@ -20,7 +20,7 @@ export class CreateProfileComponent {
   constructor(private router: Router, private profileService: ProfileService) {}
 
   onSubmit() {
-    console.log("OnSubmit Triggered")
+    console.log("OnSubmit Triggered");
     this.profile.firstName = this.firstName;
     this.profile.lastName = this.lastName;
     this.profile.email = this.email;
