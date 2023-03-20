@@ -1,34 +1,6 @@
 {
   "jobs": [
     {
-      "id": 7,
-      "title": "Director, Software Development",
-      "comapany": "Doofish Mertz",
-      "description": "This is a job for entry level applicants with 0-2 years experience",
-      "payrangemin": "100k",
-      "payrangemax": "130k",
-      "email": "snaray@gmail.com",
-      "location": "Remote, US"
-    },
-    {
-      "id": 8,
-      "title": "SW Test Engineer",
-      "comapany": "Toshiba",
-      "description": "The Software Engineer contributes within the software development team to learn and aid with test of Toshiba's Point of Sale (POS) solutions in the retail marketplace along with HW Drivers by ensuring their quality, collaborating within the agile development team in a fast-paced, customer-first environment.",
-      "payrangemax": 30,
-      "payrangemin": 25,
-      "email": "manoj@gmail.com",
-      "location": "Dallas, TX"
-    },
-    {
-      "id": 9,
-      "title": "SW Test Engineer",
-      "comapany": "Toshiba",
-      "description": "Toshiba Global Commerce Solutions is seeking a self-directed software engineer with previous experience in software development, to join our team in Guadalajara, Mexico. The Software Engineer designs, builds, and supports custom software solutions for some of the world's largest retailers.",
-      "payrangemax": 30,
-      "payrangemin": 25,
-      "email": "manoj@gmail.com",
-      "location": "Durham, NC"
     }
   ],
   "users": [
