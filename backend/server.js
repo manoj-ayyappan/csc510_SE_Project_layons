@@ -71,13 +71,24 @@ app.post('/jobs/:jobid', (req, res) => {
     res.send(obj)
 })
 
-// returns job title with a given job id (works)
-app.post('/jobtitle', (req, res) => {
+// returns all job title and their job id ()
+app.post('/search', (req, res) => {
+    kaam = {}
+    searchObj_arr = []
+    jobs_array.forEach((function (job) {
+        kaam.jobId = job.jobId
+        kaam.title = job.title
+        searchObj_arr.push(kaam)
+    }) 
+    )
+    res.send(searchObj_arr)
+
+    // // code to get title when given jobid
     
-    let id_req = req.body.jobId.toString();
-    // console.log(id_req);
-    let obj = jobs_array.find(o => (o.jobId == id_req));
-    res.send(obj.title.toString())
+    // let id_req = req.body.jobId.toString();
+    // // console.log(id_req);
+    // let obj = jobs_array.find(o => (o.jobId == id_req));
+    // res.send(obj.title.toString())
 })
 
 // sample jobs array
