@@ -12,21 +12,27 @@ app.use(bodyParser.json());
 app.listen(8082);
 console.log("App running! yay");
 
-// app.get('/jobs', (req, res) => {
-//     let title = req.params;
-//     res.send(jobs_array)
-// })
-
-// takes a job title and adds the job to the jobs array hashmap and returns the job
+// takes a job properties and adds the job to the jobs array and returns the job (works)
 app.post('/jobs', (req, res) => {
-    let job = req.body;
+    let job = {}
+    job.title = req.body.title.toString();
+    job.description = req.body.description.toString();
+    job.payrangemin = req.body.payrangemin;
+    job.payrangemax = req.body.payrangemax;
+    job.email = req.body.email.toString();
+    job.location = req.body.location.toString();
+    // console.log(typeof(job.payrangemin))
+
+    // setting the jobid
     job_id += 1;
     job.jobId = job_id
-    jobs_array.set(job_id, job);
+
+    // push the object to array
+    jobs_array.push(job);
     res.send(job)
 })
 
-// get all jobs
+// get all jobs (works)
 app.post('/all-jobs', (req, res) => {
     let jobs_arr = []
     for (let i = 0, len = jobs_array.length; i < len; i++) {
@@ -35,7 +41,7 @@ app.post('/all-jobs', (req, res) => {
     res.send(jobs_arr)
 })
 
-// get all users
+// get all users (works)
 app.post('/all-users', (req, res) => {
     let users_arr = []
     for (let i = 0, len = users_array.length; i < len; i++) {
@@ -44,25 +50,53 @@ app.post('/all-users', (req, res) => {
     res.send(users_arr)
 })
 
-// send user info
+// send user info (works)
 app.post('/send-user', (req, res) => {
-    let user = req.body;
+    let user = {}
+    user.name = req.body.name.toString();
     user_id += 1;
-    user.user_id = user_id;
+    user.userId = user_id;
     // users_array.set("user_id", user_id);
-    users_array.set(user_id, user);
+    users_array.push(user);
     res.send(user)
   })
 
-
+// returns job with a given job id (works)
 app.post('/jobs/:jobid', (req, res) => {
     
-    let id_req = req.body.job_id.toString();
-    // console.log(typeof(id_req));
-    res.send(jobs_array.get(id_req))
+    let id_req = req.body.jobId.toString();
+    // console.log(id_req);
+    let obj = jobs_array.find(o => (o.jobId == id_req));
+    // console.log(obj)
+    res.send(obj)
 })
 
-var jobs_array = new Map([["3", "SWE2"], ["4", "Test Engineer"]]);
-// test
-var users_array = new Map();
+// returns job title with a given job id (works)
+app.post('/jobtitle', (req, res) => {
+    
+    let id_req = req.body.jobId.toString();
+    // console.log(id_req);
+    let obj = jobs_array.find(o => (o.jobId == id_req));
+    res.send(obj.title.toString())
+})
+
+// sample jobs array
+let jobs_array = [
+    {
+    jobId: 3,
+    description: "Develop software for a functionality",
+    title: "SWE2",
+    payrangemin: 18,
+    payrangemax: 30,
+    email: "manoj@gmail.com",
+    location: "Remote"
+    }
+]
+// sample users array
+let users_array = [
+    {
+    userId: 3,
+    name: "Manoj"
+    }
+]
 
