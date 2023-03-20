@@ -1,149 +1,36 @@
 {
   "jobs": [
     {
-      "id": 7,
-      "description": "This is a job for entry level applicants with 0-2 years experience",
-      "title": "Software Engineering 1",
-      "payrangemin": "100",
-      "payrangemax": "200",
-      "employerName": "Sriram",
-      "email": "snaray@gmail.com",
-      "location": "remote, US"
-    },
-    {
-      "title": "wq",
-      "description": "wq",
-      "payrangemax": 0,
-      "payrangemin": 0,
-      "email": "wq",
-      "location": "wq",
-      "id": 8
-    },
-    {
-      "title": "adf",
-      "description": "fd",
-      "payrangemax": 4,
-      "payrangemin": 2,
-      "email": "sdf",
-      "location": "23",
-      "employerName": "dsf ",
-      "id": 9
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 10
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 11
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 12
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 13
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 14
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 15
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 16
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 17
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 18
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 19
-    },
-    {
-      "title": "Software Engineer",
-      "description": "Good job with lots of perks",
-      "payrangemax": 50,
-      "payrangemin": 30,
-      "email": "snaray24@ncsu.edu",
-      "location": "Remote, US",
-      "employerName": "Sriram",
-      "id": 20
     }
   ],
   "users": [
     {
       "id": 1,
       "email": "sriram@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 2,
+      "email": "manoj@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 3,
+      "email": "mansi@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 4,
+      "email": "sourabh@gmail.com",
+      "pwd": "password",
+      "profileCompleted": false
+    },
+    {
+      "id": 5,
+      "email": "karthik@gmail.com",
       "pwd": "password",
       "profileCompleted": false
     }
