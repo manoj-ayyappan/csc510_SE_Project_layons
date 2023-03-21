@@ -1,0 +1,7 @@
+.highlighted {
+  font-weight: bold;
+  color: red;
+}
+.job-name {
+  margin-right: 10px;
+}
