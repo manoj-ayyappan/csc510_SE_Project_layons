@@ -6,4 +6,5 @@ export interface Job {
   payrangemax: number;
   email: string;
   location: string;
+  employerName: string;
 }
