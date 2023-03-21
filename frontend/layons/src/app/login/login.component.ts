@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
          .subscribe( data => { 
             console.log("Is Login Success: " + data); 
       
-            if(data) this.router.navigate(['/create']); 
+            if(data) this.router.navigate(['/createprofile']); 
             else this.error = "Incorrect Credentials";
       });
    }

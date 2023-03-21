@@ -6,13 +6,14 @@ import { tap, delay } from 'rxjs/operators';
 export class AuthService {
 
    isUserLoggedIn: boolean = false;
+   //TODO: get users from backend - manoj/sourabh
    users = [
       {userName: 'sourabh', password: 'sourabh'},
       {userName: 'agashe', password: 'agashe'}
    ]
    login(userName: string, password: string): Observable<any> {
-      console.log(userName);
-      console.log(password);
+      // console.log(userName);
+      // console.log(password);
       for(let i =0; i<this.users.length; i++){
          if(this.users[i].userName == userName && this.users[i].password == password){
             this.isUserLoggedIn = true;
@@ -26,7 +27,7 @@ export class AuthService {
       }
 
    return of(this.isUserLoggedIn).pipe(
-      delay(1000),
+      //delay(1000),
       tap(val => { 
          console.log("Is User Authentication is successful: " + val); 
       })
