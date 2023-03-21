@@ -29,5 +29,14 @@
       id="location"
     />
   </label>
+  <label for="employerName"
+    >Enter employerName:
+    <input
+      type="text"
+      formControlName="employerName"
+      name="employerName"
+      id="employerName"
+    />
+  </label>
   <button [disabled]="!createJobForm.valid" type="submit">Submit</button>
 </form>
