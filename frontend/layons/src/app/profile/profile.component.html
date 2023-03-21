@@ -1,0 +1,54 @@
+<!-- profile-page.component.html -->
+
+<!-- profile-page.component.html -->
+
+<header class="navbar">
+  <nav>
+    <ul>
+      <!--<li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>-->
+      <h1>Profile Page</h1>
+    </ul>
+  </nav>
+  <div class="navbar-buttons">
+    <button (click)="onClickEdit()">Edit Profile</button>
+    <button (click)="onLogout()">Logout</button>
+  </div>
+</header>
+
+<div class="profile-container" style="margin-top: 50px;">
+  <div class="profile-field">
+    <span class="label">First Name:</span>
+    <span class="value">{{ profile.firstName }}</span>
+  </div>
+
+  <div class="profile-field">
+    <span class="label">Last Name:</span>
+    <span class="value">{{ profile.lastName }}</span>
+  </div>
+
+  <div class="profile-field">
+    <span class="label">Email:</span>
+    <span class="value">{{ profile.email }}</span>
+  </div>
+
+  <div class="profile-field">
+    <span class="label">Location:</span>
+    <span class="value">{{ profile.location }}</span>
+  </div>
+
+  <div class="profile-field">
+    <span class="label">Skills:</span>
+    <span class="value">{{ profile.skills }}</span>
+  </div>
+
+  <div class="profile-field">
+    <span class="label">Resume:</span>
+    <span class="value">
+      <a class="resume-link" href="{{ profile.resume }}" target="_blank">{{isresumeuploaded()}}</a>
+    </span>
+  </div>
+</div>
+<!--
+<button (click)="onclickedit()">Edit Profile</button>
+<button (click)="onlogout()">Logout</button>-->
+<router-outlet></router-outlet>
