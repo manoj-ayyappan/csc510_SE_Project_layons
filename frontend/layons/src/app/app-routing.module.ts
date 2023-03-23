@@ -7,6 +7,8 @@ import { JobPageComponent } from './job-page/job-page.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard } from './utilities/auth.guard';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,7 +17,6 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: 'job/:jobid', component: JobPageComponent, canActivate: [AuthGuard] },
   { path: 'createprofile', component: CreateProfileComponent, canActivate: [AuthGuard] },
-  { path: 'create_profile', component: CreateProfileComponent, canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'edit_profile', component: EditProfileComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: 'login' },
