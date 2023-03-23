@@ -3,11 +3,18 @@ const { browser, $, element, by, protractor } = require('protractor');
 let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
 
-Given('I am logged in', () => {});
+Given('I am logged in', async() => {
+  await browser.get('http://localhost:4200/login');
+  let input = await $("input[name='username']");
+  await input.sendKeys("sourabh");
+  input = await $("input[name='password']");
+  input.sendKeys("sourabh");
+  await element(by.buttonText('Log in')).click();
+});
 
 When('I am inside the Create Jobs page', async () => {
   await browser.get('http://localhost:4200/create');
-  await expect(browser.getTitle()).to.eventually.equal('Create Jobs');
+  await expect(browser.getTitle()).to.eventually.equal('Layons');
 });
 
 Then(
@@ -84,5 +91,5 @@ When('I fill in employer name as {string}', async (string) => {
 });
 
 Then('I am still in the Create Jobs page', async () => {
-  await expect(browser.getTitle()).to.eventually.equal('Create Jobs');
+  await expect(browser.getTitle()).to.eventually.equal('Layons');
 });
