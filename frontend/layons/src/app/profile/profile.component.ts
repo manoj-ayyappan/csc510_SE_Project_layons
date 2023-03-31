@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'app-profile',
@@ -10,13 +12,14 @@ import { Router } from '@angular/router';
 export class ProfileComponent {
   profile: any;
 
-  constructor(private profileService: ProfileService, private router: Router){
+  constructor(private profileService: ProfileService, private router: Router, private authService: AuthService){
     this.profile=this.profileService.getProfileData();
   }
   onClickEdit(){
     this.router.navigateByUrl('/edit_profile');
   }
   onLogout(){
+    this.authService.logout();
     this.router.navigateByUrl('/login');
   }
   isresumeuploaded(){
