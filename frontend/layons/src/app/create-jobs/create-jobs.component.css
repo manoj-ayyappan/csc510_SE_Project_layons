@@ -14,7 +14,6 @@ html, body {
     overflow: hidden;
 }
 
-
 .form-holder {
       display: flex;
       flex-direction: column;
@@ -82,7 +81,6 @@ html, body {
     line-height: 20px;
     margin-bottom: 30px;
 }
-
 
 .form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
     color: #fff;
