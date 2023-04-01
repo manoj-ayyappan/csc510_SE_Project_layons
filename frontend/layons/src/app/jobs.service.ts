@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,7 +10,8 @@ import { SearchObject } from './searchobject';
   providedIn: 'root',
 })
 export class JobsService {
-  private jobRootUrl = 'http://localhost:3000/jobs/';
+  kaam = [];
+  private jobRootUrl = 'http://localhost:3000/jobs';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
@@ -18,6 +19,7 @@ export class JobsService {
     console.log(`JobsService: ${message}`);
   }
   constructor(private http: HttpClient) {}
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       this.log(`${operation} failed: ${error.message}`);
@@ -31,18 +33,22 @@ export class JobsService {
       catchError(this.handleError<Job>(`getJob id=${jobId}`))
     );
   }
-  getAlljobs(): Observable<SearchObject[]> {
-    const url = `${this.jobRootUrl}/`;
-    return of([
-      { title: 'SDE 1', jobId: 1 },
-      { title: 'SDE 2', jobId: 2 },
-    ]);
+  getAllSearchObjects(): Observable<SearchObject[]> {
+    const url = `${this.jobRootUrl}/search`;
+    console.log("trying to get: ",url);
+    // return of([
+    //   { title: 'SDE 1', jobId: 1 },
+    //   { title: 'SDE 2', jobId: 2 },
+    // ]);
     return this.http.get<SearchObject[]>(url).pipe(
-      tap((_) => {}),
+      tap((_) => {
+        console.log(url);
+      }),
       catchError(this.handleError<SearchObject[]>(`Error getting all jobs`))
     );
   }
   createjob(job: Job): Observable<Job> {
+    // debug here
     return this.http.post<Job>(this.jobRootUrl, job, this.httpOptions).pipe(
       tap((newJob: Job) => this.log(`added job w/ id=${newJob.jobId}`)),
       catchError(this.handleError<Job>('Job'))

@@ -2,20 +2,33 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
+import { UserService } from '../app/user.service';
+import { User } from './user';
 
+@Injectable({
+   providedIn: 'root',
+ })
 export class AuthService {
+
+   constructor(private userservice: UserService) {}
+   usersList: User[] = [];
 
    isUserLoggedIn: boolean = false;
    //TODO: get users from backend - manoj/sourabh
-   users = [
-      {userName: 'sourabh', password: 'sourabh'},
-      {userName: 'agashe', password: 'agashe'}
-   ]
+   users = this.userservice.getAllUsers().subscribe((usersList) => {
+      this.usersList = usersList;
+      console.log("List of users: ",this.usersList);
+    });
+   
+   // [
+   //    {userName: 'sourabh', password: 'sourabh'},
+   //    {userName: 'agashe', password: 'agashe'}
+   // ]
    login(userName: string, password: string): Observable<any> {
       // console.log(userName);
       // console.log(password);
-      for(let i =0; i<this.users.length; i++){
-         if(this.users[i].userName == userName && this.users[i].password == password){
+      for(let i =0; i<this.usersList.length; i++){
+         if(this.usersList[i].userName == userName && this.usersList[i].password == password){
             this.isUserLoggedIn = true;
             localStorage.setItem('isUserLoggedIn', 'true');
             break;
@@ -39,5 +52,4 @@ export class AuthService {
       localStorage.removeItem('isUserLoggedIn'); 
    }
 
-   constructor() { }
 }

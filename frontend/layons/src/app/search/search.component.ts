@@ -39,8 +39,9 @@ export class SearchComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.jobsservice.getAlljobs().subscribe((jobsList) => {
+    this.jobsservice.getAllSearchObjects().subscribe((jobsList) => {
       this.jobsList = jobsList;
+      console.log("Search objects: ",this.jobsList);
     });
     this.queryControl.valueChanges.subscribe((selectedValue) => {
       if (selectedValue == null) return;
