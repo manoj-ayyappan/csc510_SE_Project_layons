@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class UserService {
 
-  private jobRootUrl = 'http://localhost:3000/users';
+  private usersRootUrl = 'http://localhost:3000/users';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
@@ -26,7 +26,7 @@ export class UserService {
   }
 
   getAllUsers(): Observable<User[]> {
-    const url = `${this.jobRootUrl}/all-users`;
+    const url = `${this.usersRootUrl}/all-users`;
     return this.http.get<User[]>(url).pipe(
       tap((_) => {}),
       catchError(this.handleError<User[]>(`Error getting all users`))
