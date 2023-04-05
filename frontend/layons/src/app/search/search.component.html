@@ -1,3 +1,17 @@
+<header class="navbar">
+  <nav>
+    <ul>
+      <!--<li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>-->
+      <h1>Profile Page</h1>
+    </ul>
+  </nav>
+  <div class="navbar-buttons" >
+    <button (click)="onClickProfile()">Profile</button>
+    <button (click)="onLogout()">Logout</button>
+    <button (click)="onClickCreateJobs()">Create Jobs</button>
+  </div>
+</header>
+
 <p>search works!</p>
 <input [formControl]="queryControl" />
 <ul>

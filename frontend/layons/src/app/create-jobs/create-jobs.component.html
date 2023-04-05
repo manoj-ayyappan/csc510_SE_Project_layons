@@ -1,3 +1,21 @@
+<header class="topnav">
+  <div class="topnav">
+    <h2>Create Jobs</h2>
+    <a class="active" href="#home">Home</a>
+    <a (click)="onLogout()">Logout</a>
+    <a (click)="onClickSearch()">Jobs</a>
+    <a (click)="onClickProfile()">Profile</a>
+  </div>
+</header>
+
+<!--
+<div class="topnav">
+  <a (click)="onLogout()">Logout</a>
+  <a (click)="onClickSearch()">Jobs</a>
+  <a (click)="onClickProfile()">Profile</a>
+</div>
+-->
+
 <p>create-jobs works!</p>
 <form [formGroup]="createJobForm" (ngSubmit)="onSubmit()">
   <label for="title">Enter title: </label>
