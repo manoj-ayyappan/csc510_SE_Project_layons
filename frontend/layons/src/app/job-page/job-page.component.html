@@ -1,1 +1,33 @@
-<p>job-page works!</p>
+<div class="job-container">
+  <div class="job-details" *ngIf="jobDetails">
+    <h1>New Job Posting</h1>
+    <div class="details">
+      <div class="field">
+        <span class="label">Title:</span>
+        <span class="value">{{ jobDetails.title }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Description:</span>
+        <span class="value">{{ jobDetails.description }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Pay Range:</span>
+        <span class="value">{{ jobDetails.payrangemin }} - {{ jobDetails.payrangemax }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Email:</span>
+        <span class="value">{{ jobDetails.email }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Location:</span>
+        <span class="value">{{ jobDetails.location }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Employer Name:</span>
+        <span class="value">{{ jobDetails.employerName }}</span>
+      </div>
+    </div>
+    <button *ngIf="!applied" (click)="apply()">Apply</button>
+    <button *ngIf="applied" disabled>Applied</button>
+  </div>
+</div>

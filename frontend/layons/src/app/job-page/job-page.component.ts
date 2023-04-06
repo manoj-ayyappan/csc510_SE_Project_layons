@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { JobsService } from '../jobs.service';
 import { Job } from '../job';
 
@@ -15,6 +14,7 @@ export class JobPageComponent implements OnInit {
   /*  Default Job ID is -1, check for a valid jobID before doing calls to DB*/
   jobid: string = '-1';
   jobDetails: Job | undefined;
+  applied: boolean=false;
   constructor(private route: ActivatedRoute, private jobsservice: JobsService) {
     route.params.pipe(map((p) => p['jobid'])).subscribe(
       (response) => {
@@ -35,5 +35,9 @@ export class JobPageComponent implements OnInit {
       console.log(job);
       this.jobDetails = job;
     });
+  }
+  apply() {
+    this.applied = true;
+    console.log(this.jobDetails?.jobId, "Applied");
   }
 }
