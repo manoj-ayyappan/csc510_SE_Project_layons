@@ -1,23 +1,17 @@
 <!-- profile-page.component.html -->
 
 <!-- profile-page.component.html -->
-
-<header class="navbar">
-  <nav>
-    <ul>
-      <!--<li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>-->
-      <h1>Profile Page</h1>
-    </ul>
-  </nav>
-  <div class="navbar-buttons" >
-    <button (click)="onClickEdit()">Edit Profile</button>
-    <button (click)="onLogout()">Logout</button>
-    <button (click)="onClickSearch()">Jobs</button>
-    <button (click)="onClickCreateJobs()">Create Jobs</button>
+<header class="topnav">
+  <div class="topnav">
+    <h3>Profile</h3>
+    <a (click)="onLogout()">Logout</a>
+    <a (click)="onClickEdit()">Edit Profile</a>
+    <a (click)="onClickSearch()">Jobs</a>
+    <a (click)="onClickCreateJobs()">Create Jobs</a>
   </div>
 </header>
 
-<div class="profile-container" style="margin-top: 50px;">
+<div class="profile-container" style="margin-top: 100px;">
   <div class="profile-field">
     <span class="label">First Name:</span>
     <span class="value">{{ profile.firstName }}</span>

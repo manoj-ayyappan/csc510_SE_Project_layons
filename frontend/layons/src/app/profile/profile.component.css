@@ -2,7 +2,7 @@
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
+  margin: 800px auto 20px;
   max-width: 600px;
   padding: 20px;
 }
@@ -45,50 +45,41 @@ button:hover {
 
 /* profile-page.component.css */
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+.topnav {
   background-color: #333;
-  color: #fff;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar li {
-  margin-right: 20px;
-}
-
-.navbar a {
-  color: #fff;
+/* Style the links inside the navigation bar */
+.topnav a {
+  display: inline-block;
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
+  font-size: 20px;
 }
 
-.navbar a.active {
-  border-bottom: 2px solid #fff;
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #04AA6D;
+  color: black;
 }
 
-.navbar-buttons {
-  display: flex;
-  justify-content: flex-end;
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
 }
 
-.navbar-buttons button {
-  margin-left: 10px;
-  background-color: #fff;
-  color: #333;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.navbar-buttons button:hover {
-  background-color: #eee;
+.topnav h3 {
+  display: inline-block;
+  margin-right: 20px;
+  color: white;
+  margin-left: 20px;
 }

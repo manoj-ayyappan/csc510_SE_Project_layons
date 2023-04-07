@@ -1,14 +1,10 @@
-<header class="navbar">
-  <nav>
-    <ul>
-      <!--<li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>-->
-      <h1>Profile Page</h1>
-    </ul>
-  </nav>
-  <div class="navbar-buttons" >
-    <button (click)="onClickProfile()">Profile</button>
-    <button (click)="onLogout()">Logout</button>
-    <button (click)="onClickCreateJobs()">Create Jobs</button>
+
+<header class="topnav">
+  <div class="topnav">
+    <h3>Search</h3>
+    <a (click)="onClickProfile()">Profile</a>
+    <a (click)="onClickCreateJobs()">Create Jobs</a>
+    <a (click)="onLogout()">Logout</a>
   </div>
 </header>
 
