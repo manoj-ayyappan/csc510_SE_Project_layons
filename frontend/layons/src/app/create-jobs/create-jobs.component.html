@@ -1,42 +1,46 @@
-<p>create-jobs works!</p>
-<form [formGroup]="createJobForm" (ngSubmit)="onSubmit()">
-  <label for="title">Enter title: </label>
-  <input formControlName="title" name="title" id="title" />
-  <label for="description">Enter Job Description: </label>
-  <textarea
-    formControlName="description"
-    name="description"
-    id="description"
-  ></textarea>
-  <label for="minpay"
-    >Enter Minimum Pay:
-    <input type="number" formControlName="minpay" name="minpay" id="minpay" />
-  </label>
-  <label for="maxpay"
-    >Enter Maximum Pay:
-    <input type="number" formControlName="maxpay" name="maxpay" id="maxpay" />
-  </label>
-  <label for="email"
-    >Enter email:
-    <input type="email" formControlName="email" name="email" id="email" />
-  </label>
-  <label for="location"
-    >Enter location:
-    <input
-      type="text"
-      formControlName="location"
-      name="location"
-      id="location"
-    />
-  </label>
-  <label for="employerName"
-    >Enter employerName:
-    <input
-      type="text"
-      formControlName="employerName"
-      name="employerName"
-      id="employerName"
-    />
-  </label>
-  <button [disabled]="!createJobForm.valid" type="submit">Submit</button>
-</form>
+<div class="form-container">
+  <h1>Create New Job Posting</h1>
+  <form [formGroup]="createJobForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input formControlName="title" type="text" name="title" id="title" placeholder="Enter job title" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="description">Job Description:</label>
+      <textarea formControlName="description" name="description" id="description" placeholder="Enter job description" class="form-control"></textarea>
+    </div>
+    <div class="form-group row">
+      <div class="col">
+        <label for="minpay">Minimum Pay:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="number" formControlName="minpay" name="minpay" id="minpay" placeholder="0.00" class="form-control" />
+        </div>
+      </div>
+      <div class="col">
+        <label for="maxpay">Maximum Pay:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="number" formControlName="maxpay" name="maxpay" id="maxpay" placeholder="0.00" class="form-control" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email" name="email" id="email" placeholder="Enter email address" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" formControlName="location" name="location" id="location" placeholder="Enter job location" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="employerName">Employer Name:</label>
+      <input type="text" formControlName="employerName" name="employerName" id="employerName" placeholder="Enter employer name" class="form-control" />
+    </div>
+    <button [disabled]="!createJobForm.valid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
