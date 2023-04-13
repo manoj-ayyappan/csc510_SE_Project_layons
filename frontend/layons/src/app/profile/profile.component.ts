@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ProfileService } from '../profile.service';
-import { Router } from '@angular/router';
+import { Router,Routes } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { LogoutComponent } from '../logout/logout.component';
+import { CreateJobsComponent } from '../create-jobs/create-jobs.component';
 
 @Component({
   selector: 'app-profile',
@@ -21,6 +22,13 @@ export class ProfileComponent {
   onLogout(){
     this.authService.logout();
     this.router.navigateByUrl('/login');
+  }
+  onClickSearch(){
+    this.router.navigateByUrl('/search');
+  }
+  onClickCreateJobs(){
+    console.log("Calling onClickCreateJobs")
+    this.router.navigateByUrl('/create');
   }
   isresumeuploaded(){
     if(this.profile.resume!=null){

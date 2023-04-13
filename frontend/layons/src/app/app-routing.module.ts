@@ -9,6 +9,8 @@ import { AuthGuard } from './utilities/auth.guard';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { __importDefault } from "tslib";
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,7 +20,7 @@ const routes: Routes = [
   { path: 'job/:jobid', component: JobPageComponent, canActivate: [AuthGuard] },
   { path: 'createprofile', component: CreateProfileComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-  {path: 'edit_profile', component: EditProfileComponent, canActivate: [AuthGuard]},
+  { path: 'edit_profile', component: EditProfileComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: 'login' },
 ];
 
