@@ -1,8 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { Router,Routes } from '@angular/router';
 import { Job } from '../job';
 import { JobsService } from '../jobs.service';
+import { ProfileComponent } from '../profile/profile.component';
+import { LogoutComponent } from '../logout/logout.component';
+import { AuthService } from '../auth.service';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-create-jobs',
@@ -25,7 +29,7 @@ export class CreateJobsComponent {
     location: new FormControl('', Validators.required),
   });
 
-  constructor(private jobsservice: JobsService) {}
+  constructor(private jobsservice: JobsService, private router: Router, private authService: AuthService) {}
 
   onSubmit() {
     console.log(this.createJobForm.value);
@@ -37,7 +41,7 @@ export class CreateJobsComponent {
     const location = this.createJobForm.value.location!;
     const employerName = this.createJobForm.value.employerName!;
     const postJob: Job = {
-      /*ID is set in backend*/
+      // /ID is set in backend/
       title,
       description,
       payrangemax,
@@ -49,5 +53,15 @@ export class CreateJobsComponent {
     this.jobsservice.createjob(postJob).subscribe((job) => {
       alert('added' + job.title);
     });
+  }
+  onClickProfile(){
+    this.router.navigateByUrl('/profile')
+  }
+  onLogout(){
+    this.authService.logout();
+    this.router.navigateByUrl('/login');
+  }
+  onClickSearch(){
+    this.router.navigateByUrl('/search');
   }
 }
