@@ -98,7 +98,7 @@ let jobs_array = [
   {
     jobId: 3,
     description: 'Develop software for a functionality',
-    title: 'SWE2',
+    title: 'SDE 1',
     payrangemin: 18,
     payrangemax: 30,
     email: 'manoj@gmail.com',
