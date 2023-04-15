@@ -40,6 +40,38 @@ export class CreateJobsComponent {
     const email = this.createJobForm.value.email!;
     const location = this.createJobForm.value.location!;
     const employerName = this.createJobForm.value.employerName!;
+    if (this.createJobForm.value.title == '') {
+      alert("Please enter a Job Title");
+      return;
+    }
+    if (this.createJobForm.value.description == '') {
+      alert("Please enter a Job Description");
+      return;
+    }
+    if (this.createJobForm.value.minpay == undefined) {
+      alert("Please enter a valid Minimum Pay");
+      return;
+    }
+    if (this.createJobForm.value.maxpay == undefined) {
+      alert("Please enter a valid Maximum Pay");
+      return;
+    }
+    if (this.createJobForm.value.email == "") {
+      alert("Please enter an Email");
+      return;
+    }
+    // if (!validateEmail(this.createJobForm.value.email)){
+    //   alert("Please enter a valid Email");
+    //   return;
+    // }
+    if (this.createJobForm.value.location == '') {
+      alert("Please enter a Location");
+      return;
+    }
+    if (this.createJobForm.value.employerName == '') {
+      alert("Please enter an employer Name");
+      return;
+    }
     const postJob: Job = {
       // /ID is set in backend/
       title,
@@ -51,7 +83,7 @@ export class CreateJobsComponent {
       employerName,
     };
     this.jobsservice.createjob(postJob).subscribe((job) => {
-      alert('added' + job.title);
+      alert('Added ' + job.title);
     });
   }
   onClickProfile(){
@@ -64,4 +96,10 @@ export class CreateJobsComponent {
   onClickSearch(){
     this.router.navigateByUrl('/search');
   }
+}
+
+function validateEmail(email: string): boolean {
+  // Regular expression for email validation
+  const emailRegex = new RegExp('/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/');
+  return emailRegex.test(email);
 }

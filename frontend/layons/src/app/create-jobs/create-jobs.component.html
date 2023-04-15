@@ -14,7 +14,7 @@
 
 <header class="topnav">
   <div class="topnav">
-    <!-- <h3>Create Jobs</h3> -->
+    <img src="../../assets/logo.png" alt="Logo" class="logo">
     <a (click)="onLogout()">Logout</a>
     <a (click)="onClickSearch()">Jobs</a>
     <a (click)="onClickProfile()">Profile</a>
@@ -29,58 +29,51 @@
           <div class="form-content">
               <div class="form-items">
                 <h3>Create a Job: </h3><br>
-                <form class="requires-validation" novalidate>
+                <form [formGroup]="createJobForm" (ngSubmit)="onSubmit()" novalidate>
 
                   <h5>1. Enter Job Details:</h5>
 
                     <div class="col-md-12">
-                      <!-- <label for="title">Enter Job Title:</label> -->
-                      <input class="form-control" type="text" id="title" name="title" placeholder="Enter Job Title" required>
+                      <input class="form-control" formControlName="title" type="text" id="title" name="title" placeholder="Enter Job Title" required>
                       <div class="invalid-feedback">Please enter a Job Title!</div>
                     </div>
 
                     <div class="col-md-12">
-                      <!-- <label for="description">Enter Job Description:</label> -->
-                      <textarea class="form-control" name="description" id="description" placeholder="Enter Job Description" required></textarea>
+                      <textarea class="form-control" formControlName="description" name="description" id="description" placeholder="Enter Job Description" required></textarea>
                       <div class="invalid-feedback">Please enter a Job Description!</div>
                     </div>
 
                     <h5>2. Enter Pay Range: </h5>
 
                     <div class="col-md-12">
-                      <!-- <label for="minpay">Enter Minimum Pay:</label> -->
-                      <input class="form-control" type="number" id="minpay" name="minpay" placeholder="Enter Minimum Pay" required>
+                      <input class="form-control" formControlName="minpay" type="number" id="minpay" name="minpay" placeholder="Enter Minimum Pay" required>
                       <div class="invalid-feedback">Please enter a Minimum Pay!</div>
                     </div>
 
                     <div class="col-md-12">
-                      <!-- <label for="maxpay">Enter Maximum Pay:</label> -->
-                      <input class="form-control" type="number" id="maxpay" name="maxpay" placeholder="Enter Maximum Pay" required>
+                      <input class="form-control" formControlName="maxpay" type="number" id="maxpay" name="maxpay" placeholder="Enter Maximum Pay" required>
                       <div class="invalid-feedback">Please enter a Maximum Pay!</div>
                     </div>
 
                     <h5>3. Enter Employer Details:</h5>
 
                     <div class="col-md-12">
-                      <!-- <label for="email">Enter Email:</label> -->
-                      <input class="form-control" type="email" id="email" name="email" placeholder="Enter Email ID" required>
+                      <input class="form-control" formControlName="email" type="email" id="email" name="email" placeholder="Enter Email ID" required>
                       <div class="invalid-feedback">Please enter an Email!</div>
                     </div>
 
                     <div class="col-md-12">
-                      <!-- <label for="location">Enter location:</label> -->
-                      <input class="form-control" type="text" id="location" name="location" placeholder="Enter Location" required>
+                      <input class="form-control" formControlName="location" type="text" id="location" name="location" placeholder="Enter Location" required>
                       <div class="invalid-feedback">Please enter a Location!</div>
                     </div>
 
                     <div class="col-md-12">
-                      <!-- <label for="employerName">Enter Employer Name:</label> -->
-                      <input class="form-control" type="text" id="employerName" name="employerName" placeholder="Enter Employer Name" required>
+                      <input class="form-control" formControlName="employerName" type="text" id="employerName" name="employerName" placeholder="Enter Employer Name" required>
                       <div class="invalid-feedback">Please enter an Employer Name!</div>
                     </div>
 
                   <div class="form-button mt-3">
-                      <button [disabled]="!createJobForm.valid" id="submit" type="submit" class="btn btn-primary">Submit</button>
+                      <button id="submit" type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 
                 </form>
