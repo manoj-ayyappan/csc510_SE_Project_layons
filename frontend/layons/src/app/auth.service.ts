@@ -27,6 +27,7 @@ export class AuthService {
    login(userName: string, password: string): Observable<any> {
       // console.log(userName);
       // console.log(password);
+      console.log("List of users: ",this.usersList);
       for(let i =0; i<this.usersList.length; i++){
          if(this.usersList[i].userName == userName && this.usersList[i].password == password){
             this.isUserLoggedIn = true;

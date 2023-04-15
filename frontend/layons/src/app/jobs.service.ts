@@ -35,20 +35,21 @@ export class JobsService {
   }
   getAllSearchObjects(): Observable<SearchObject[]> {
     const url = `${this.jobRootUrl}/search`;
-    console.log("trying to get: ",url);
+    console.log('trying to get: ', url);
     // return of([
     //   { title: 'SDE 1', jobId: 1 },
     //   { title: 'SDE 2', jobId: 2 },
     // ]);
     return this.http.get<SearchObject[]>(url).pipe(
       tap((_) => {
-        console.log(url);
+        console.log(_);
       }),
       catchError(this.handleError<SearchObject[]>(`Error getting all jobs`))
     );
   }
   createjob(job: Job): Observable<Job> {
     // debug here
+    console.log(job);
     return this.http.post<Job>(this.jobRootUrl, job, this.httpOptions).pipe(
       tap((newJob: Job) => this.log(`added job w/ id=${newJob.jobId}`)),
       catchError(this.handleError<Job>('Job'))

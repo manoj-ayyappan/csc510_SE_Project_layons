@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.listen(3000);
 
-console.log("App running! yay");
+console.log('App running! yay');
 
 // takes a job properties and adds the job to the jobs array and returns the job (works)
 app.post('/jobs', (req, res) => {
@@ -24,6 +24,7 @@ app.post('/jobs', (req, res) => {
   job.payrangemax = req.body.payrangemax;
   job.email = req.body.email.toString();
   job.location = req.body.location.toString();
+  job.employerName = req.body.employerName.toString();
   // console.log(typeof(job.payrangemin))
 
   // setting the jobid
@@ -32,51 +33,49 @@ app.post('/jobs', (req, res) => {
 
   // push the object to array
   jobs_array.push(job);
+  // console.log(job);
   res.send(job);
 });
 
 // get all jobs (works)
 app.get('/jobs/all-jobs', (req, res) => {
-    let jobs_arr = []
-    for (let i = 0, len = jobs_array.length; i < len; i++) {
-        jobs_arr.push(jobs_array[i]);
-      }
-    res.send(jobs_arr)
-})
+  let jobs_arr = [];
+  for (let i = 0, len = jobs_array.length; i < len; i++) {
+    jobs_arr.push(jobs_array[i]);
+  }
+  res.send(jobs_arr);
+});
 
 // get all users (works)
 app.get('/users/all-users', (req, res) => {
-    let users_arr = []
-    for (let i = 0, len = users_array.length; i < len; i++) {
-        users_arr.push(users_array[i]);
-      }
-    res.send(users_arr)
-})
+  let users_arr = [];
+  for (let i = 0, len = users_array.length; i < len; i++) {
+    users_arr.push(users_array[i]);
+  }
+  res.send(users_arr);
+});
 
 // send user info (works)
 app.post('/send-user', (req, res) => {
-    let user = {}
-    user.name = req.body.name.toString();
-    user.pass = req.body.pass.toString();
-    user_id += 1;
-    user.userId = user_id;
-    // users_array.set("user_id", user_id);
-    users_array.push(user);
-    res.send(user)
-  })
+  let user = {};
+  user.name = req.body.name.toString();
+  user.pass = req.body.pass.toString();
+  user_id += 1;
+  user.userId = user_id;
+  // users_array.set("user_id", user_id);
+  users_array.push(user);
+  res.send(user);
+});
 
 // returns all job title and their job id ()
 app.get('/jobs/search', (req, res) => {
-    kaam = {}
-    searchObj_arr = []
-    jobs_array.forEach((function (job) {
-        kaam.jobId = job.jobId
-        kaam.title = job.title
-        searchObj_arr.push(kaam)
-    }) 
-    )
-    
-    res.send(searchObj_arr)
+  kaam = {};
+  searchObj_arr = [];
+  jobs_array.forEach(function (job) {
+    searchObj_arr.push({ jobId: job.jobId, title: job.title });
+  });
+
+  res.send(searchObj_arr);
 
   // // code to get title when given jobid
 
@@ -88,14 +87,13 @@ app.get('/jobs/search', (req, res) => {
 
 // returns job with a given job id (works)
 app.get('/jobs/:jobid', (req, res) => {
-    
-    let id_req = req.params['jobid']
-    // console.log(id_req);
-    let obj = jobs_array.find(o => (o.jobId == id_req));
-    console.log(typeof obj,obj);
-    // console.log(obj)
-    res.send(obj)
-})
+  let id_req = req.params['jobid'];
+  // console.log(id_req);
+  let obj = jobs_array.find((o) => o.jobId == id_req);
+  /* console.log(typeof obj,obj); */
+  // console.log(obj)
+  res.send(obj);
+});
 
 // sample jobs array
 let jobs_array = [
@@ -106,6 +104,7 @@ let jobs_array = [
     payrangemin: 18,
     payrangemax: 30,
     email: 'manoj@gmail.com',
+    employerName:'Sriram',
     location: 'Remote',
   },
 ];
@@ -113,8 +112,7 @@ let jobs_array = [
 let users_array = [
   {
     userId: 3,
-    userName: "Manoj",
-    password: "password"
-    }
+    userName: 'Manoj',
+    password: 'password',
+  },
 ];
-

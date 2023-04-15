@@ -6,8 +6,8 @@
       <span
         *ngFor="let ch of result[0].target.split(''); index as j"
         [ngClass]="{ highlighted: hlIndices[i].includes(j) }"
-        >{{ ch }}</span
-      >
+        >{{ ch }}
+      </span>
       <span><a [href]="jobURLs[i]">Apply</a></span>
     </div>
   </li>
