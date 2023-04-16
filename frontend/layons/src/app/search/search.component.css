@@ -1,31 +1,22 @@
-.profile-container {
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 20px;
-}
 
-.profile-field {
-  margin: 10px 0;
-}
-
-.label {
-  display: inline-block;
+.highlighted {
   font-weight: bold;
+  color: red;
+}
+.job-name {
   margin-right: 10px;
-  width: 100px;
 }
 
-.value {
-  display: inline-block;
-  font-size: 1.1em;
+.highlighted {
   font-weight: bold;
+  color: red;
+}
+.job-name {
+  margin-right: 10px;
 }
 
-.resume-link {
-  color: #007bff;
+body{
+  margin:80px;
 }
 
 button {

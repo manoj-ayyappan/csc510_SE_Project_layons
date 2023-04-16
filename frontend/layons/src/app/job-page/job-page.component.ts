@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes, ActivatedRoute, ParamMap } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { JobsService } from '../jobs.service';
-import { Job } from '../job';
 import { AuthService } from '../auth.service';
-
 import { JobsService } from '../jobs.service';
 import { Job } from '../job';
 

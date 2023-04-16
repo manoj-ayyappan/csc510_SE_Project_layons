@@ -31,6 +31,7 @@ export class ProfileComponent {
     this.router.navigateByUrl('/create');
   }
   isresumeuploaded(){
+    console.log(this.profile.resume);
     if(this.profile.resume!=null){
       return "Uploaded";
     }

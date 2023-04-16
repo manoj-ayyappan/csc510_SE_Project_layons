@@ -7,6 +7,7 @@ export class ProfileService {
   profileData: any = {};
 
   setProfileData(data: any) {
+    console.log(data)
     this.profileData = data;
     localStorage.setItem('profile_object', JSON.stringify(this.profileData));
   }

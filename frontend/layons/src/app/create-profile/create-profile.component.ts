@@ -52,7 +52,7 @@ export class CreateProfileComponent {
       alert("Upload resume");
       return;
     }
-    console.log(this.profile.resume);
+    // console.log(this.profile.resume.);
     this.profileService.setProfileData(this.profile);
 
     this.router.navigateByUrl('/profile');
@@ -60,5 +60,7 @@ export class CreateProfileComponent {
 
   onResumeSelected(event: any) {
     this.resume = event.target.files[0];
+    console.log(event.target.files[0])
+    console.log(event.target.files[0].mozFullPath)
   }
 }
