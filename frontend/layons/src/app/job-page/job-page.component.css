@@ -112,3 +112,10 @@ html, body {
   margin-left: 20px;
 }
 
+
+.topnav h3 {
+  display: inline-block;
+  margin-right: 20px;
+  color: white;
+  margin-left: 20px;
+}

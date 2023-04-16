@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes, ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { JobsService } from '../jobs.service';
 import { Job } from '../job';
@@ -51,5 +50,8 @@ export class JobPageComponent implements OnInit {
   onClickCreateJobs(){
     console.log("Calling onClickCreateJobs")
     this.router.navigateByUrl('/create');
+  }
+  onClickProfile(){
+    this.router.navigateByUrl('/profile');
   }
 }
