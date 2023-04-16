@@ -24,6 +24,12 @@ html, body {
       min-height: 100vh;
 }
 
+.profile-form {
+    max-width: 600px;
+    margin: auto;
+  }
+
+
   .form-group_1 {
     display: flex;
     flex-direction: column;
@@ -41,6 +47,13 @@ html, body {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+}
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: auto;
   }
   
   label {
@@ -73,6 +86,31 @@ html, body {
   
   button[type="submit"]:hover {
     background-color: #0056b3;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .topnav {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar li {
+    margin-right: 20px;
+    color: white;
+    margin-left: 20px;
   }
   
   .navbar {

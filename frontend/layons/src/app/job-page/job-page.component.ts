@@ -5,6 +5,9 @@ import { JobsService } from '../jobs.service';
 import { Job } from '../job';
 import { AuthService } from '../auth.service';
 
+import { JobsService } from '../jobs.service';
+import { Job } from '../job';
+
 @Component({
   selector: 'app-job-page',
   templateUrl: './job-page.component.html',

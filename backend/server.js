@@ -69,16 +69,13 @@ app.post('/send-user', (req, res) => {
 
 // returns all job title and their job id ()
 app.get('/jobs/search', (req, res) => {
-    kaam = {}
-    searchObj_arr = []
-    jobs_array.forEach((function (job) {
-        kaam.jobId = job.jobId
-        kaam.title = job.title
-        searchObj_arr.push(kaam)
-    }) 
-    )
-    
-    res.send(searchObj_arr)
+  kaam = {};
+  searchObj_arr = [];
+  jobs_array.forEach(function (job) {
+    searchObj_arr.push({ jobId: job.jobId, title: job.title });
+  });
+
+  res.send(searchObj_arr);
 
   // // code to get title when given jobid
 
@@ -103,7 +100,7 @@ let jobs_array = [
   {
     jobId: 3,
     description: 'Develop software for a functionality',
-    title: 'SWE2',
+    title: 'SDE 1',
     payrangemin: 18,
     payrangemax: 30,
     email: 'manoj@gmail.com',
