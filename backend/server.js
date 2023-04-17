@@ -5,7 +5,7 @@ const formidable = require('express-formidable');
 const form = formidable({ uploadDir: __dirname, keepExtensions: true });
 const app = express();
 app.use(cors());
-app.use(formidable({ uploadDir: __dirname, keepExtensions: true }));
+app.use('/resume', formidable({ uploadDir: __dirname, keepExtensions: true }));
 
 let job_id = 0;
 let user_id = 0;
@@ -40,6 +40,7 @@ app.post('/jobs', (req, res) => {
   // push the object to array
   jobs_array.push(job);
   // console.log(job);
+  /* res.sendStatus(200); */
   res.send(job);
 });
 
@@ -59,18 +60,6 @@ app.get('/users/all-users', (req, res) => {
     users_arr.push(users_array[i]);
   }
   res.send(users_arr);
-});
-
-// send user info (works)
-app.post('/send-user', (req, res) => {
-  let user = {};
-  user.name = req.body.name.toString();
-  user.pass = req.body.pass.toString();
-  user_id += 1;
-  user.userId = user_id;
-  // users_array.set("user_id", user_id);
-  users_array.push(user);
-  res.send(user);
 });
 
 // returns all job title and their job id ()
