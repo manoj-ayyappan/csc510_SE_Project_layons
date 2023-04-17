@@ -1,6 +1,6 @@
 # CSC510 Software Engineering Project Spring23
 
-[![Tests](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml)
+[![Tests](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml)
 
 ## Table of Contents
 1. [Introduction](#introduction)
