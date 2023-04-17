@@ -1,10 +1,16 @@
 const express = require('express');
+const fs = require('fs');
 const cors = require('cors');
+const formidable = require('express-formidable');
+const form = formidable({ uploadDir: __dirname, keepExtensions: true });
 const app = express();
 app.use(cors());
+app.use(formidable({ uploadDir: __dirname, keepExtensions: true }));
+
 let job_id = 0;
 let user_id = 0;
 let text = [];
+let resume = undefined;
 
 const bodyParser = require('body-parser');
 
@@ -95,6 +101,13 @@ app.get('/jobs/:jobid', (req, res) => {
   res.send(obj);
 });
 
+app.post('/resume', (req, res) => {
+  resume = req.files.file_upload.path;
+});
+app.get('/resume', (req, res) => {
+  res.download(resume);
+});
+
 // sample jobs array
 let jobs_array = [
   {
@@ -104,7 +117,7 @@ let jobs_array = [
     payrangemin: 18,
     payrangemax: 30,
     email: 'manoj@gmail.com',
-    employerName:'Sriram',
+    employerName: 'Sriram',
     location: 'Remote',
   },
 ];

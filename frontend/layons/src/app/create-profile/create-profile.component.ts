@@ -60,7 +60,5 @@ export class CreateProfileComponent {
 
   onResumeSelected(event: any) {
     this.resume = event.target.files[0];
-    console.log(event.target.files[0])
-    console.log(event.target.files[0].mozFullPath)
   }
 }
