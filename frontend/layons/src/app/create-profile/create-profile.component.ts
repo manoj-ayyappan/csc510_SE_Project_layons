@@ -54,6 +54,7 @@ export class CreateProfileComponent {
     }
     // console.log(this.profile.resume.);
     this.profileService.setProfileData(this.profile);
+    alert('Added profile');
 
     this.router.navigateByUrl('/profile');
   }
