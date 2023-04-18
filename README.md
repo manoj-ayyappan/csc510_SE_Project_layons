@@ -1,4 +1,4 @@
-# CSC510 Software Engineering Project Spring23
+# CSC510 Software Engineering Project Spring23 - LayOns
 
 [![Tests](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml)
 
@@ -6,6 +6,7 @@
 
 <img src="https://img.shields.io/codacy/coverage/github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23"></img>
 <img src="https://img.shields.io/github/languages/code-size/sswattam/CSC510_SE_PROJECT_Spring23"></img>
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
@@ -15,14 +16,14 @@
 6. [Contributors](#contributors)
 
 ## Introduction
-The Job Search Portal is a web application that allows users to search for job opportunities and apply for jobs. Along with this users can also post job openings in their institution. The project is built using Angular and Node.js, and it serves as a showcase for software engineering learnings. The repository contains all the code, documentation, and resources related to the project.
+The LayOns (Job Search Portal), is a web application that allows users to search for job opportunities and apply for jobs. Along with this users can also post job openings in their institution. The project is built using Angular and Node.js, and it serves as a showcase for software engineering learnings. The repository contains all the code, documentation, and resources related to the project.
 
 1. FRONTEND: This directory contains the Angular frontend code, including components, services, and templates for the user interface of the job search portal.
 2. BACKEND: This directory contains the Node.js backend code, including database, and controllers for handling job search and job application functionalities.
 3. E2E: This directory contains test cases and test data used for testing the project. Path -> "frontend/layons/e2e"
 
 ## Getting started
-To run the Job Search Portal locally, follow these steps:
+To run LayOns locally, follow these steps:
 
 1. Clone the repository to your local machine using `git clone https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23.git`
 2. Install Angular and Node.js on your local machine, if not already installed. (https://angular.io/guide/setup-local)
@@ -30,7 +31,7 @@ To run the Job Search Portal locally, follow these steps:
 4. Navigate to the BACKEND directory `CSC510_SE_PROJECT_Spring23/backend` and run `npm install` to install the dependencies for the backend.
 5. Start the Angular development server by running `ng serve` OR `npm start` in the FRONTEND directory.
 6. Start the Node.js backend server by running `node server.js` in the BACKEND directory.
-7. Open a web browser and go to `http://localhost:4200` to access the Job Search Portal.
+7. Open a web browser and go to `http://localhost:4200` to access LayOns.
 
 Below are the config files:
 
@@ -64,7 +65,7 @@ By participating in this project, you agree to abide by this Code of Conduct. Vi
 
 If you experience or witness any behavior that violates this Code of Conduct, please report it to the project maintainers immediately. We are committed to addressing and resolving any issues promptly and fairly.
 
-Let's work together to create a positive and inclusive community around the Job Search Portal project!
+Let's work together to create a positive and inclusive community around the LayOns project!
 
 ## Support
 
@@ -79,4 +80,4 @@ Please do contact any of us:
 5. [Karthik Narayanan Gopala Sundaresan](kgopala3@ncsu.edu)
 
 ## Contributors
-Thanks goes to [these](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/graphs/contributors) people for creating this project!
+Thanks goes to [these](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/graphs/contributors) people for developing LayOns!
