@@ -10,10 +10,11 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
-3. [Contribution](#contribution)
-4. [Code of Conduct](#code-of-conduct)
-5. [Support](#support)
-6. [Contributors](#contributors)
+3. [Directory Structure](#directory-structure)
+4. [Contribution](#contribution)
+5. [Code of Conduct](#code-of-conduct)
+6. [Support](#support)
+7. [Contributors](#contributors)
 
 ## Introduction
 The LayOns (Job Search Portal), is a web application that allows users to search for job opportunities and apply for jobs. Along with this users can also post job openings in their institution. The project is built using Angular and Node.js, and it serves as a showcase for software engineering learnings. The repository contains all the code, documentation, and resources related to the project.
@@ -38,6 +39,116 @@ Below are the config files:
 1. angular.json - This is the configuration file for an Angular project. It contains settings for build options, assets, styles, scripts, and other project-related configurations.
 2. package.json - This is the configuration file for Node.js projects. It contains metadata, dependencies, scripts, and other project-related configurations.
 3. server.js - This is the entry point file for the Node.js backend server. It contains the server setup, routes, and other backend configurations.
+
+## Directory Structure:
+
+.
+├── LayOns.pdf
+├── README.md
+├── backend
+│   ├── api.test.js
+│   ├── db.json
+│   ├── node_modules
+│   ├── api.test.ts
+│   ├── db.json
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+├── frontend
+│   ├── layons
+│   │   ├── README.md
+│   │   ├── angular.json
+│   │   ├── dist
+│   │   ├── e2e
+│   │   │   ├── features
+│   │   │   │   ├── create_jobs.feature
+│   │   │   │   ├── create_profile.feature
+│   │   │   │   └── search.feature
+│   │   │   ├── steps
+│   │   │   │   ├── app.po.ts
+│   │   │   │   ├── create_jobs.step.ts
+│   │   │   │   ├── create_profile.step.ts
+│   │   │   │   └── search.step.ts
+│   │   │   └── tsconfig.e2e.json
+│   │   ├── node_modules
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── protractor.conf.js
+│   │   ├── reports
+│   │   │   └── summary.json
+│   │   ├── src
+│   │   │   ├── app
+│   │   │   │   ├── app-routing.module.ts
+│   │   │   │   ├── app.component.css
+│   │   │   │   ├── app.component.html
+│   │   │   │   ├── app.component.spec.ts
+│   │   │   │   ├── app.component.ts
+│   │   │   │   ├── app.module.ts
+│   │   │   │   ├── auth.service.spec.ts
+│   │   │   │   ├── auth.service.ts
+│   │   │   │   ├── create-jobs
+│   │   │   │   │   ├── create-jobs.component.css
+│   │   │   │   │   ├── create-jobs.component.html
+│   │   │   │   │   ├── create-jobs.component.spec.ts
+│   │   │   │   │   └── create-jobs.component.ts
+│   │   │   │   ├── create-profile
+│   │   │   │   │   ├── create-profile.component.css
+│   │   │   │   │   ├── create-profile.component.html
+│   │   │   │   │   ├── create-profile.component.spec.ts
+│   │   │   │   │   └── create-profile.component.ts
+│   │   │   │   ├── edit-profile
+│   │   │   │   │   ├── edit-profile.component.css
+│   │   │   │   │   ├── edit-profile.component.html
+│   │   │   │   │   ├── edit-profile.component.spec.ts
+│   │   │   │   │   └── edit-profile.component.ts
+│   │   │   │   ├── job-page
+│   │   │   │   │   ├── job-page.component.css
+│   │   │   │   │   ├── job-page.component.html
+│   │   │   │   │   ├── job-page.component.spec.ts
+│   │   │   │   │   └── job-page.component.ts
+│   │   │   │   ├── job.ts
+│   │   │   │   ├── jobs.service.spec.ts
+│   │   │   │   ├── jobs.service.ts
+│   │   │   │   ├── login
+│   │   │   │   │   ├── login.component.css
+│   │   │   │   │   ├── login.component.html
+│   │   │   │   │   ├── login.component.spec.ts
+│   │   │   │   │   └── login.component.ts
+│   │   │   │   ├── logout
+│   │   │   │   │   ├── logout.component.css
+│   │   │   │   │   ├── logout.component.html
+│   │   │   │   │   ├── logout.component.spec.ts
+│   │   │   │   │   └── logout.component.ts
+│   │   │   │   ├── profile
+│   │   │   │   │   ├── profile.component.css
+│   │   │   │   │   ├── profile.component.html
+│   │   │   │   │   ├── profile.component.spec.ts
+│   │   │   │   │   └── profile.component.ts
+│   │   │   │   ├── profile.service.spec.ts
+│   │   │   │   ├── profile.service.ts
+│   │   │   │   ├── search
+│   │   │   │   │   ├── search.component.css
+│   │   │   │   │   ├── search.component.html
+│   │   │   │   │   ├── search.component.spec.ts
+│   │   │   │   │   └── search.component.ts
+│   │   │   │   ├── searchobject.ts
+│   │   │   │   ├── user.service.spec.ts
+│   │   │   │   ├── user.service.ts
+│   │   │   │   ├── user.ts
+│   │   │   │   └── utilities
+│   │   │   │       ├── auth.guard.spec.ts
+│   │   │   │       └── auth.guard.ts
+│   │   │   ├── assets
+│   │   │   │   └── logo.png
+│   │   │   ├── favicon.ico
+│   │   │   ├── index.html
+│   │   │   ├── main.ts
+│   │   │   └── styles.css
+│   │   ├── tsconfig.app.json
+│   │   ├── tsconfig.json
+│   │   └── tsconfig.spec.json
+│   └── package-lock.json
+└── package-lock.json
 
 ## Contribution
 We welcome contributions to the project! If you would like to contribute, please follow these steps:
