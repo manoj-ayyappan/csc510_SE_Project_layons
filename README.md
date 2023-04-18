@@ -2,6 +2,10 @@
 
 [![Tests](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml)
 
+![Test eg](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)
+
+<img src="https://img.shields.io/codacy/coverage/github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23"></img>
+<img src="https://img.shields.io/github/languages/code-size/sswattam/CSC510_SE_PROJECT_Spring23"></img>
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
