@@ -1,4 +1,4 @@
-# CSC510 Software Engineering Project Spring23
+# CSC510 Software Engineering Project Spring23 - LayOns
 
 [![Tests](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml)
 
@@ -6,23 +6,25 @@
 
 <img src="https://img.shields.io/codacy/coverage/github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23"></img>
 <img src="https://img.shields.io/github/languages/code-size/sswattam/CSC510_SE_PROJECT_Spring23"></img>
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
-3. [Contribution](#contribution)
-4. [Code of Conduct](#code-of-conduct)
-5. [Support](#support)
-6. [Contributors](#contributors)
+3. [Directory Structure](#directory-structure)
+4. [Contribution](#contribution)
+5. [Code of Conduct](#code-of-conduct)
+6. [Support](#support)
+7. [Contributors](#contributors)
 
 ## Introduction
-The Job Search Portal is a web application that allows users to search for job opportunities and apply for jobs. Along with this users can also post job openings in their institution. The project is built using Angular and Node.js, and it serves as a showcase for software engineering learnings. The repository contains all the code, documentation, and resources related to the project.
+The LayOns (Job Search Portal), is a web application that allows users to search for job opportunities and apply for jobs. Along with this users can also post job openings in their institution. The project is built using Angular and Node.js, and it serves as a showcase for software engineering learnings. The repository contains all the code, documentation, and resources related to the project.
 
 1. FRONTEND: This directory contains the Angular frontend code, including components, services, and templates for the user interface of the job search portal.
 2. BACKEND: This directory contains the Node.js backend code, including database, and controllers for handling job search and job application functionalities.
 3. E2E: This directory contains test cases and test data used for testing the project. Path -> "frontend/layons/e2e"
 
 ## Getting started
-To run the Job Search Portal locally, follow these steps:
+To run LayOns locally, follow these steps:
 
 1. Clone the repository to your local machine using `git clone https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23.git`
 2. Install Angular and Node.js on your local machine, if not already installed. (https://angular.io/guide/setup-local)
@@ -30,13 +32,123 @@ To run the Job Search Portal locally, follow these steps:
 4. Navigate to the BACKEND directory `CSC510_SE_PROJECT_Spring23/backend` and run `npm install` to install the dependencies for the backend.
 5. Start the Angular development server by running `ng serve` OR `npm start` in the FRONTEND directory.
 6. Start the Node.js backend server by running `node server.js` in the BACKEND directory.
-7. Open a web browser and go to `http://localhost:4200` to access the Job Search Portal.
+7. Open a web browser and go to `http://localhost:4200` to access LayOns.
 
 Below are the config files:
 
 1. angular.json - This is the configuration file for an Angular project. It contains settings for build options, assets, styles, scripts, and other project-related configurations.
 2. package.json - This is the configuration file for Node.js projects. It contains metadata, dependencies, scripts, and other project-related configurations.
 3. server.js - This is the entry point file for the Node.js backend server. It contains the server setup, routes, and other backend configurations.
+
+## Directory Structure:
+
+.
+├── LayOns.pdf
+├── README.md
+├── backend
+│   ├── api.test.js
+│   ├── db.json
+│   ├── node_modules
+│   ├── api.test.ts
+│   ├── db.json
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+├── frontend
+│   ├── layons
+│   │   ├── README.md
+│   │   ├── angular.json
+│   │   ├── dist
+│   │   ├── e2e
+│   │   │   ├── features
+│   │   │   │   ├── create_jobs.feature
+│   │   │   │   ├── create_profile.feature
+│   │   │   │   └── search.feature
+│   │   │   ├── steps
+│   │   │   │   ├── app.po.ts
+│   │   │   │   ├── create_jobs.step.ts
+│   │   │   │   ├── create_profile.step.ts
+│   │   │   │   └── search.step.ts
+│   │   │   └── tsconfig.e2e.json
+│   │   ├── node_modules
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── protractor.conf.js
+│   │   ├── reports
+│   │   │   └── summary.json
+│   │   ├── src
+│   │   │   ├── app
+│   │   │   │   ├── app-routing.module.ts
+│   │   │   │   ├── app.component.css
+│   │   │   │   ├── app.component.html
+│   │   │   │   ├── app.component.spec.ts
+│   │   │   │   ├── app.component.ts
+│   │   │   │   ├── app.module.ts
+│   │   │   │   ├── auth.service.spec.ts
+│   │   │   │   ├── auth.service.ts
+│   │   │   │   ├── create-jobs
+│   │   │   │   │   ├── create-jobs.component.css
+│   │   │   │   │   ├── create-jobs.component.html
+│   │   │   │   │   ├── create-jobs.component.spec.ts
+│   │   │   │   │   └── create-jobs.component.ts
+│   │   │   │   ├── create-profile
+│   │   │   │   │   ├── create-profile.component.css
+│   │   │   │   │   ├── create-profile.component.html
+│   │   │   │   │   ├── create-profile.component.spec.ts
+│   │   │   │   │   └── create-profile.component.ts
+│   │   │   │   ├── edit-profile
+│   │   │   │   │   ├── edit-profile.component.css
+│   │   │   │   │   ├── edit-profile.component.html
+│   │   │   │   │   ├── edit-profile.component.spec.ts
+│   │   │   │   │   └── edit-profile.component.ts
+│   │   │   │   ├── job-page
+│   │   │   │   │   ├── job-page.component.css
+│   │   │   │   │   ├── job-page.component.html
+│   │   │   │   │   ├── job-page.component.spec.ts
+│   │   │   │   │   └── job-page.component.ts
+│   │   │   │   ├── job.ts
+│   │   │   │   ├── jobs.service.spec.ts
+│   │   │   │   ├── jobs.service.ts
+│   │   │   │   ├── login
+│   │   │   │   │   ├── login.component.css
+│   │   │   │   │   ├── login.component.html
+│   │   │   │   │   ├── login.component.spec.ts
+│   │   │   │   │   └── login.component.ts
+│   │   │   │   ├── logout
+│   │   │   │   │   ├── logout.component.css
+│   │   │   │   │   ├── logout.component.html
+│   │   │   │   │   ├── logout.component.spec.ts
+│   │   │   │   │   └── logout.component.ts
+│   │   │   │   ├── profile
+│   │   │   │   │   ├── profile.component.css
+│   │   │   │   │   ├── profile.component.html
+│   │   │   │   │   ├── profile.component.spec.ts
+│   │   │   │   │   └── profile.component.ts
+│   │   │   │   ├── profile.service.spec.ts
+│   │   │   │   ├── profile.service.ts
+│   │   │   │   ├── search
+│   │   │   │   │   ├── search.component.css
+│   │   │   │   │   ├── search.component.html
+│   │   │   │   │   ├── search.component.spec.ts
+│   │   │   │   │   └── search.component.ts
+│   │   │   │   ├── searchobject.ts
+│   │   │   │   ├── user.service.spec.ts
+│   │   │   │   ├── user.service.ts
+│   │   │   │   ├── user.ts
+│   │   │   │   └── utilities
+│   │   │   │       ├── auth.guard.spec.ts
+│   │   │   │       └── auth.guard.ts
+│   │   │   ├── assets
+│   │   │   │   └── logo.png
+│   │   │   ├── favicon.ico
+│   │   │   ├── index.html
+│   │   │   ├── main.ts
+│   │   │   └── styles.css
+│   │   ├── tsconfig.app.json
+│   │   ├── tsconfig.json
+│   │   └── tsconfig.spec.json
+│   └── package-lock.json
+└── package-lock.json
 
 ## Contribution
 We welcome contributions to the project! If you would like to contribute, please follow these steps:
@@ -64,7 +176,7 @@ By participating in this project, you agree to abide by this Code of Conduct. Vi
 
 If you experience or witness any behavior that violates this Code of Conduct, please report it to the project maintainers immediately. We are committed to addressing and resolving any issues promptly and fairly.
 
-Let's work together to create a positive and inclusive community around the Job Search Portal project!
+Let's work together to create a positive and inclusive community around the LayOns project!
 
 ## Support
 
@@ -79,4 +191,4 @@ Please do contact any of us:
 5. [Karthik Narayanan Gopala Sundaresan](kgopala3@ncsu.edu)
 
 ## Contributors
-Thanks goes to [these](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/graphs/contributors) people for creating this project!
+Thanks goes to [these](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/graphs/contributors) people for developing LayOns!
