@@ -109,12 +109,62 @@ let jobs_array = [
     employerName: 'Sriram',
     location: 'Remote',
   },
+  {
+    jobId: 4,
+    description: 'Implement Testing for a functionality',
+    title: 'SDE 1',
+    payrangemin: 15,
+    payrangemax: 25,
+    email: 'manoj@gmail.com',
+    employerName: 'Sriram',
+    location: 'Raleigh',
+  },
+  {
+    jobId: 5,
+    description: 'Integrate a functionality with codebase',
+    title: 'SDE 2',
+    payrangemin: 25,
+    payrangemax: 40,
+    email: 'manoj@gmail.com',
+    employerName: 'Sriram',
+    location: 'San Jose',
+  },
+  {
+    jobId: 6,
+    description: 'Manage Project',
+    title: 'SDE 3',
+    payrangemin: 30,
+    payrangemax: 50,
+    email: 'manoj@gmail.com',
+    employerName: 'Sriram',
+    location: 'Raleigh',
+  },
 ];
 // sample users array
 let users_array = [
   {
     userId: 3,
     userName: 'Manoj',
-    password: 'password',
+    password: 'password12',
+  },
+  {
+    userId: 4,
+    userName: 'Karthik',
+    password: 'password23',
+  },
+  {
+    userId: 4,
+    userName: 'Sriram',
+    password: 'password34',
+  },
+  {
+    userId: 4,
+    userName: 'Mansi',
+    password: 'password45',
+  },
+  {
+    userId: 4,
+    userName: 'Sourabh',
+    password: 'password56',
   },
 ];
