@@ -12,3 +12,8 @@ Feature: Create Jobs
         When I fill in email as "snaray24@ncsu.edu"
         When I fill in location as "Remote, US"
         When I fill in employer name as "Sriram"
+        Then I am still in the Create Jobs Page
+        When I am in the Search for Jobs page
+        When I enter the job’s name which I have created before
+        When I click the button called Search
+        Then I can see the job posted
