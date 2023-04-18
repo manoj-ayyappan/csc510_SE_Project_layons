@@ -159,6 +159,7 @@ Below are the config files:
     │   │   └── tsconfig.spec.json
     │   └── package-lock.json
     ├── CITATION.cff
+    ├── LICENSE
     ├── package-lock.json
     └── README.md 
 
