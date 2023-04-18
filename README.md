@@ -26,11 +26,11 @@ The LayOns (Job Search Portal), is a web application that allows users to search
 
 ## Pre-requisites
 
-1. Installation of VS Code
-    Go to [VS Code](https://code.visualstudio.com/download) and then download the latest version of it.
-    Open installation file (.exe) and then follow all the instructions to install the IDE.
-2. Install Node.js and Angular
-    Go to [Node.js](https://nodejs.org/en/download) and then download the latest version as per your system configuration.
+1. Installation of VS Code: <br>
+Go to [VS Code](https://code.visualstudio.com/download) and then download the latest version of it. <br>
+Open installation file (.exe) and then follow all the instructions to install the IDE.
+2. Install Node.js and Angular: <br>
+    Go to [Node.js](https://nodejs.org/en/download) and then download the latest version as per your system configuration. <br>
     Go to [Angular](https://angular.io/guide/setup-local) and then download the latest version of it.
     Follow the instructions given on those websites to successfully install the required server and framework.
 
@@ -55,7 +55,6 @@ Below are the config files:
 
     .
     ├── LayOns.pdf
-    ├── README.md
     ├── backend
     │   ├── api.test.js
     │   ├── db.json
@@ -159,7 +158,9 @@ Below are the config files:
     │   │   ├── tsconfig.json
     │   │   └── tsconfig.spec.json
     │   └── package-lock.json
-    └── package-lock.json
+    ├── CITATION.cff
+    ├── package-lock.json
+    └── README.md 
 
 ## Contribution
 We welcome contributions to the project! If you would like to contribute, please follow these steps:
