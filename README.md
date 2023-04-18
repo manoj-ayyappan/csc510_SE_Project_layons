@@ -9,9 +9,10 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
-3. [License](#license)
+3. [Contribution](#contribution)
 4. [Code of Conduct](#code-of-conduct)
-5. [Contributors](#contributors)
+5. [Support](#support)
+6. [Contributors](#contributors)
 
 ## Introduction
 The Job Search Portal is a web application that allows users to search for job opportunities and apply for jobs. Along with this users can also post job openings in their institution. The project is built using Angular and Node.js, and it serves as a showcase for software engineering learnings. The repository contains all the code, documentation, and resources related to the project.
@@ -33,10 +34,9 @@ To run the Job Search Portal locally, follow these steps:
 
 Below are the config files:
 
-1. 
-
-
-## License
+1. angular.json - This is the configuration file for an Angular project. It contains settings for build options, assets, styles, scripts, and other project-related configurations.
+2. package.json - This is the configuration file for Node.js projects. It contains metadata, dependencies, scripts, and other project-related configurations.
+3. server.js - This is the entry point file for the Node.js backend server. It contains the server setup, routes, and other backend configurations.
 
 ## Contribution
 We welcome contributions to the project! If you would like to contribute, please follow these steps:
@@ -55,28 +55,28 @@ We welcome contributions to the project! If you would like to contribute, please
 We strive to create a welcoming and inclusive community for all contributors and users of this project. As such, we ask that you follow these guidelines when participating in this project:
 
 1. Be respectful and inclusive: Treat all individuals with respect and consideration, regardless of their race, color, religion, gender, sexual orientation, disability, age, or any other characteristic protected by applicable laws. Avoid making derogatory comments or engaging in discriminatory behavior.
-
 2. Foster a positive and collaborative environment: Encourage open and constructive discussions, and be willing to listen to different perspectives. Avoid engaging in personal attacks, trolling, or harassment of any kind.
-
 3. Follow community guidelines and project standards: Familiarize yourself with the project's contribution guidelines and coding standards, and follow them when submitting code, reporting issues, or engaging in discussions. Be willing to receive and provide feedback in a constructive manner.
-
 4. Respect intellectual property and licensing: Ensure that any contributions you make to the project comply with applicable licenses and do not infringe on any intellectual property rights. Avoid using or distributing unauthorized or proprietary software or content.
-
 5. Be mindful of security and privacy: Do not engage in any activities that could compromise the security or privacy of the project, its contributors, or its users. Report any security vulnerabilities or privacy concerns to the project maintainers promptly.
-
 6. Be accountable for your actions: Take responsibility for your actions and their impact on the project and its community. If you make a mistake or receive feedback, be willing to acknowledge it, learn from it, and take appropriate actions to rectify it.
-
 By participating in this project, you agree to abide by this Code of Conduct. Violations of this Code of Conduct may result in temporary or permanent removal of access to the project's resources and communication channels.
 
 If you experience or witness any behavior that violates this Code of Conduct, please report it to the project maintainers immediately. We are committed to addressing and resolving any issues promptly and fairly.
 
 Let's work together to create a positive and inclusive community around the Job Search Portal project!
 
+## Support
+
+We do our best to answer all tickets in a timely manner, but sometimes we accumulate a backlog and may take awhile to respond. Please be patient - we will get back to you as soon as we can!
+
+Please do contact any of us:
+
+1. [Sriram Narayanan](snaray24@ncsu.edu)
+2. [Sourabh Wattamwar](sswattam@ncsu.edu)
+3. [Manoj Ayyappan](mayyapp@ncsu.edu)
+4. [Mansi Saxena](msaxena4@ncsu.edu)
+5. [Karthik Narayanan Gopala Sundaresan](kgopala3@ncsu.edu)
+
 ## Contributors
-1. [Sriram Narayanan](https://github.ncsu.edu/snaray24)
-2. [Sourabh Wattamwar](https://github.ncsu.edu/sswattam)
-3. [Manoj Ayyappan](https://github.com/manoj-ayyappan)
-4. [Mansi Saxena](https://github.ncsu.edu/msaxena4)
-5. [Karthik Narayanan Gopala Sundaresan](https://github.ncsu.edu/kgopala3)
-
-
+Thanks goes to [these](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/graphs/contributors) people for creating this project!
