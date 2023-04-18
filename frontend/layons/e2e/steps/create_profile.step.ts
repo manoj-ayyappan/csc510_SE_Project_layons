@@ -1,5 +1,5 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-// import { DocumentUploadService } from './DocumentUploadService.ts';
+var path = require('path');
 const { browser, $, element, by, protractor } = require('protractor');
 let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
@@ -17,7 +17,6 @@ When('I log in for the first time', async () => {
   await browser.get('http://localhost:4200/createprofile');
   await expect(browser.getTitle()).to.eventually.equal('Layons');
 });
-// Then I am presented with a form which asks for name, email, location, skills
 
 Then('I am presented with a form which asks for name, email, location, skills', async () => {
     let exists = false;
@@ -55,18 +54,24 @@ When('I enter my email id {string}', async (string) => {
 });
 
 When('I enter my location {string}', async (string) => {
-  let input = await $("input[name='skills']");
+  let input = await $("input[name='location']");
   input.sendKeys(string);
 });
 
 When('I enter my skills {string}', async (string) => {
-  // Write code here that turns the phrase above into concrete actions
+  let input = await $("textarea[name='skills']");
+  input.sendKeys(string);
 });
 
 // let documentUploadService: DocumentUploadService;
 
+
 When('I am asked to upload my resume as a PDF file', async () => {
-  
+  var fileToUpload = '/Users/mansisaxena/Documents/SE/CSC510_SE_PROJECT_Spring23-1/LayOns.pdf',
+      absolutePath = path.resolve(__dirname, fileToUpload);
+
+  element(by.css('input[type="file"]')).sendKeys(absolutePath);    
+  // element(by.id('uploadButton')).click();
 });
 
 // Given('I have a document upload service', () => {
@@ -82,30 +87,36 @@ When('I am asked to upload my resume as a PDF file', async () => {
 //   expect(documentUploadService.getUploadedDocuments()).toContain(document); // Assert that the uploaded document is in the list of uploaded documents
 // });
 
-When('I click on Submit button', async (string) => {
-  await element(by.buttonText('Submit')).click();
+When('I click on Submit button', async () => {
+  await browser.sleep(2000);
+
+  await browser.executeScript('window.scrollTo(0,200);')
+  // await element(by.buttonText('Submit')).click();
+
+  let button = await element(by.buttonText('Submit'));
+  await (browser.actions().mouseMove(button).click().perform());
 });
 
 //   how to check is "Profile Created" message is displayed
 Then('I am displayed a success message saying "Profile Created"', async () => {
-  let EC = protractor.ExpectedConditions;
+  // let EC = protractor.ExpectedConditions;
   // await browser.wait(
   //   EC.alertIsPresent(),
   //   5000,
   //   'Alert is not getting present :('
   // );
-  browser.wait(function () {
-    return browser.switchTo().alert().then(
-      //alert present
-      function () { return true; },
-      //alert not present
-      function () { return false; }
-    );
-  }, 3000);
-  var popupAlert = browser.switchTo().alert();
-  let alertText = popupAlert.getText();
-  console.log(alertText);
-  popupAlert.accept();
+  // browser.wait(function () {
+  //   return browser.switchTo().alert().then(
+  //     //alert present
+  //     function () { return true; },
+  //     //alert not present
+  //     function () { return false; }
+  //   );
+  // }, 3000);
+  // var popupAlert = browser.switchTo().alert();
+  // let alertText = popupAlert.getText();
+  // console.log(alertText);
+  // popupAlert.accept();
   // await browser.switchTo().alert().accept();
 });
 
