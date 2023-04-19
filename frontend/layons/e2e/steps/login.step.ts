@@ -6,7 +6,6 @@ let expect = chai.expect;
 
 Given('I am at the Login page of the website', async () => {
     await browser.get('http://localhost:4200/login');
-    // await expect(browser.getTitle()).to.eventually.equal('Layons');
   });
 
   Then('I am presented with a form which asks for Username and Password', async () => {
@@ -31,6 +30,21 @@ Given('I am at the Login page of the website', async () => {
 
   When('I click the Log In button', async () => {
     await element(by.buttonText('Log In')).click();
+  });
+
+  Then('a message {string} is displayed', async (string) => {
+    const errorMessage = element(by.css('.error-message'));
+
+    const isDisplayed: boolean = await errorMessage.isDisplayed();
+    const actualMessage: string = await errorMessage.getText();
+
+    expect(isDisplayed).to.be.true;
+    expect(actualMessage).to.equal(string);
+  });
+
+  Then('I stay on the Login page of the website', async () => {
+    await browser.get('http://localhost:4200/login');
+
   });
 
   Then('I am navigated to the create profile page', async () => {
