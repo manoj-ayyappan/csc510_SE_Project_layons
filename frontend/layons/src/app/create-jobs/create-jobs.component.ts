@@ -59,7 +59,7 @@ export class CreateJobsComponent {
       alert("Please enter an Email");
       return;
     }
-    // if (!validateEmail(this.createJobForm.value.email)){
+    // if (!validateEmail(this.createJobForm.value.email == "")){
     //   alert("Please enter a valid Email");
     //   return;
     // }

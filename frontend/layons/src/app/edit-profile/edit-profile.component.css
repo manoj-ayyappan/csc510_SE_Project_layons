@@ -14,7 +14,6 @@
       overflow: hidden;
   }
   
-  
   .form-holder {
         display: flex;
         flex-direction: column;
@@ -163,7 +162,7 @@
   }
 
   .topnav {
-    background-color: #333;
+    background-color: #152733;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -178,3 +177,10 @@
     margin-left: 20px;
   }
   
+
+  .navbar-brand {
+    display: inline-block;
+    height: auto;
+    width: 100px;
+    padding:0%;
+  }

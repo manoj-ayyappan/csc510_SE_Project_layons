@@ -9,9 +9,9 @@
 }
 
 html, body {
-    height: 100%;
+    /* height: 100%; */
     background-color: #152733;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .form-holder {
@@ -21,6 +21,11 @@ html, body {
       align-items: center;
       text-align: center;
       min-height: 100vh;
+}
+
+.form-body {
+    height: 100vh;
+    overflow: hidden;
 }
 
 .form-holder .form-content {
@@ -199,4 +204,11 @@ html, body {
     margin-right: 20px;
     color: white;
     margin-left: 20px;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    height: auto;
+    width: 100px;
+    padding:0%;
   }

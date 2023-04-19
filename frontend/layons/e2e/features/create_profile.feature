@@ -12,5 +12,6 @@ Feature: Create Profile
         When I enter my location "Raleigh"
         When I enter my skills "Machine Learning"
         And I am asked to upload my resume as a PDF file
-        When I click on "Submit" button
+        When I click on Submit button
         Then I am displayed a success message saying "Profile Created"
+        Then I am navigated to the profile details page

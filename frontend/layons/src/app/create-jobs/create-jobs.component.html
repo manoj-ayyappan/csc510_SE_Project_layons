@@ -14,6 +14,16 @@
 
 <!-- <form (submit)="onSubmit()" class="profile-form" style="margin-top: 50px;"> -->
 
+<header class="topnav">
+  <div class="topnav">
+    <img src="../../assets/logo.png" alt="LayOns" class="navbar-brand">
+    <a (click)="onLogout()">Logout</a>
+    <a (click)="onClickSearch()">Search Jobs</a>
+    <a (click)="onClickProfile()">Profile</a>
+  </div>
+</header>
+
+<body>
 <div class="form-body">
   <div class="row">
       <div class="form-holder">
@@ -80,3 +90,4 @@
         </div>
     </div>
 </div>
+</body>

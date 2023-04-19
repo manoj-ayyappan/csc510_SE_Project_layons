@@ -53,6 +53,7 @@ export class CreateProfileComponent {
       return;
     }
     this.profileService.setProfileData(this.profile);
+    alert('Profile Created');
 
     this.router.navigateByUrl('/profile');
   }

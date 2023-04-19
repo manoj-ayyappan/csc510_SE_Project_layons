@@ -55,9 +55,20 @@ export class SearchComponent implements OnInit {
     this.jobsservice.getAllSearchObjects().subscribe((jobsList) => {
       this.jobsList = jobsList;
     });
-    this.queryControl.valueChanges.subscribe((selectedValue) => {
-      if (selectedValue == null) return;
-      this.doSearch(selectedValue);
-    });
+    // this.queryControl.valueChanges.subscribe((selectedValue) => {
+    //   if (selectedValue == null) return;
+    //   this.doSearch(selectedValue);
+    // });
+  }
+  onSearch() {
+    let query:string = "";
+    if (this.queryControl.value != null) {
+      query = this.queryControl.value;
+    }
+    if (this.queryControl.value == "") {
+      alert("Please enter a job");
+      return;
+    }
+    this.doSearch(query);
   }
 }

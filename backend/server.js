@@ -128,17 +128,17 @@ let jobs_array = [
 // sample users array
 let users_array = [
   {
-    userId: 3,
+    userId: 1,
     userName: 'Manoj',
     password: 'password12',
   },
   {
-    userId: 4,
+    userId: 2,
     userName: 'Karthik',
     password: 'password23',
   },
   {
-    userId: 4,
+    userId: 3,
     userName: 'Sriram',
     password: 'password34',
   },
@@ -148,7 +148,7 @@ let users_array = [
     password: 'password45',
   },
   {
-    userId: 4,
+    userId: 5,
     userName: 'Sourabh',
     password: 'password56',
   },

@@ -87,3 +87,10 @@ html, body {
   color: white;
   margin-left: 20px;
 }
+
+.navbar-brand {
+  display: inline-block;
+  height: auto;
+  width: 100px;
+  padding:0%;
+}

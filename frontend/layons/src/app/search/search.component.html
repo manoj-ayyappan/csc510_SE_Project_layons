@@ -14,15 +14,21 @@
 
 <header class="topnav">
   <div class="topnav">
-    <h3>Search</h3>
-    <a (click)="onClickProfile()">Profile</a>
-    <a (click)="onClickCreateJobs()">Create Jobs</a>
+    <img src="../../assets/logo.png" alt="LayOns" class="navbar-brand">
     <a (click)="onLogout()">Logout</a>
+    <a (click)="onClickCreateJobs()">Create Jobs</a>
+    <a (click)="onClickProfile()">Profile</a>
   </div>
 </header>
 
 <body>
-  <input [formControl]="queryControl" />
+  <div class="profile-container" style="margin-top: 100px;">
+    <div class="profile-details">
+      <h3>Search Jobs</h3><br>
+  <input class="form-input" [formControl]="queryControl" placeholder="Eg. Software Developer"/>
+  <div class="form-button mt-3">
+    <button id="submit" type="submit" (click)="onSearch()" class="btn btn-primary">Search</button>
+  </div>
   <ul>
     <li *ngFor="let result of searchResults; index as i">
       <div class="job-name">
@@ -31,8 +37,11 @@
           [ngClass]="{ highlighted: hlIndices[i].includes(j) }"
           >{{ ch }}
         </span>
-        <span><a [href]="jobURLs[i]">Apply</a></span>
+        <span class = "joblink"><a [href]="jobURLs[i]">Apply</a></span>
       </div>
     </li>
   </ul>
+</div>
+</div>
 </body>
+</html>

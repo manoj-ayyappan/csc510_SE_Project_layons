@@ -14,54 +14,54 @@
 
 <header class="topnav">
     <div class="topnav">
-      <!-- <h3>Profile</h3> -->
-      <!-- add Logo -->
+      <img src="../../assets/logo.png" alt="LayOns" class="navbar-brand">
       <a (click)="onLogout()">Logout</a>
-      <a (click)="onClickSearch()">Jobs</a>
+      <a (click)="onClickSearch()">Search Jobs</a>
       <a (click)="onClickCreateJobs()">Create Jobs</a>
+      <a (click)="onClickProfile()">Profile</a>
     </div>
 </header>
 
 <body>
 <div class="job-container" style="margin-top: 100px;">
     <div class="job-details" *ngIf="jobDetails">
-      <h3>Job Title here{{ jobDetails.title }}</h3>
+      <h3>{{ jobDetails.title }}</h3><br>
       <div class="details">
 
         <div class="field">
           <span class="label">Title:</span>
-          <span class="value">{{ jobDetails.title }}</span>
+          <span class="value title">{{ jobDetails.title }}</span>
         </div>
 
         <div class="field">
           <span class="label">Description:</span>
-          <span class="value">{{ jobDetails.description }}</span>
+          <span class="value description">{{ jobDetails.description }}</span>
         </div>
 
         <div class="field">
           <span class="label">Pay Range:</span>
-          <span class="value">{{ jobDetails.payrangemin }} - {{ jobDetails.payrangemax }}</span>
+          <span class="value payrangemin">{{ jobDetails.payrangemin }}</span> - <span class="value payrangemax"> {{ jobDetails.payrangemax }}</span>
         </div>
 
         <div class="field">
           <span class="label">Email:</span>
-          <span class="value">{{ jobDetails.email }}</span>
+          <span class="value email">{{ jobDetails.email }}</span>
         </div>
 
         <div class="field">
           <span class="label">Location:</span>
-          <span class="value">{{ jobDetails.location }}</span>
+          <span class="value location">{{ jobDetails.location }}</span>
         </div>
 
         <div class="field">
           <span class="label">Employer Name:</span>
-          <span class="value">{{ jobDetails.employerName }}</span>
+          <span class="value employerName">{{ jobDetails.employerName }}</span>
         </div>
 
       </div>
       <div class="form-button mt-3">
       <button *ngIf="!applied" (click)="apply()" class="btn btn-primary">Apply</button>
-      <button *ngIf="applied" class="btn btn-applied">Applied</button>
+      <button *ngIf="applied" class="btn btn-applied">Applied Successfully</button>
     </div>
     </div>
 </div>

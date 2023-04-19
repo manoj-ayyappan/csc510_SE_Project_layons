@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use our code, please cite it as below."
+authors:
+- family-names: "Wattamwar"
+  given-names: "Sourabh"
+- family-names: "Narayanan"
+  given-names: "Sriram"
+- family-names: "Ayyappan"
+  given-names: "Manoj"
+- family-names: "Saxena"
+  given-names: "Mansi" 
+- family-names: "Gopala"
+  given-names: "Karthik" 
+title: "CSC 510 Software Engineering: LayOns"
