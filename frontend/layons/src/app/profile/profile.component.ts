@@ -27,11 +27,9 @@ export class ProfileComponent {
     this.router.navigateByUrl('/search');
   }
   onClickCreateJobs(){
-    console.log("Calling onClickCreateJobs")
     this.router.navigateByUrl('/create');
   }
   isresumeuploaded(){
-    console.log(this.profile.resume);
     if(this.profile.resume!=null){
       return "Uploaded";
     }

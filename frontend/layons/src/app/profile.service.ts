@@ -21,9 +21,6 @@ export class ProfileService {
   constructor(private http: HttpClient) {}
   uploadresume(resume: FormData): Observable<string> {
   return this.http.post<any>('http://localhost:3000/resume', resume, this.httpOptions).pipe(
-      tap((_) => {
-        console.log(_);
-      }),
       catchError(this.handleError<any>('Error'))
     );
 }

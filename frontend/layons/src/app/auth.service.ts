@@ -14,20 +14,11 @@ export class AuthService {
    usersList: User[] = [];
 
    isUserLoggedIn: boolean = false;
-   //TODO: get users from backend - manoj/sourabh
    users = this.userservice.getAllUsers().subscribe((usersList) => {
       this.usersList = usersList;
-      console.log("List of users: ",this.usersList);
     });
-   
-   // [
-   //    {userName: 'sourabh', password: 'sourabh'},
-   //    {userName: 'agashe', password: 'agashe'}
-   // ]
+
    login(userName: string, password: string): Observable<any> {
-      // console.log(userName);
-      // console.log(password);
-      console.log("List of users: ",this.usersList);
       for(let i =0; i<this.usersList.length; i++){
          if(this.usersList[i].userName == userName && this.usersList[i].password == password){
             this.isUserLoggedIn = true;
@@ -42,8 +33,7 @@ export class AuthService {
 
    return of(this.isUserLoggedIn).pipe(
       //delay(1000),
-      tap(val => { 
-         console.log("Is User Authentication is successful: " + val); 
+      tap(val => {
       })
    );
    }

@@ -24,7 +24,6 @@ export class JobPageComponent implements OnInit {
         console.error('Error: ' + err);
       },
       () => {
-        console.log('Completed');
       }
     );
   }
@@ -32,13 +31,11 @@ export class JobPageComponent implements OnInit {
     /Valid Job ID here/
     /* jobDetails: Job; */
     this.jobsservice.getJob(this.jobid).subscribe((job) => {
-      console.log(job);
       this.jobDetails = job;
     });
   }
   apply() {
     this.applied = true;
-    console.log(this.jobDetails?.jobId, "Applied");
   }
   onLogout(){
     this.authService.logout();
@@ -48,7 +45,6 @@ export class JobPageComponent implements OnInit {
     this.router.navigateByUrl('/search');
   }
   onClickCreateJobs(){
-    console.log("Calling onClickCreateJobs")
     this.router.navigateByUrl('/create');
   }
   onClickProfile(){

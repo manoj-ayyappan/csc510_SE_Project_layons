@@ -52,7 +52,6 @@ export class CreateProfileComponent {
       alert("Upload resume");
       return;
     }
-    // console.log(this.profile.resume.);
     this.profileService.setProfileData(this.profile);
 
     this.router.navigateByUrl('/profile');

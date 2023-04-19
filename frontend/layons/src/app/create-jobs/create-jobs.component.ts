@@ -32,7 +32,6 @@ export class CreateJobsComponent {
   constructor(private jobsservice: JobsService, private router: Router, private authService: AuthService) {}
 
   onSubmit() {
-    console.log(this.createJobForm.value);
     const title: string = this.createJobForm.value.title!;
     const description = this.createJobForm.value.description!;
     const payrangemin = this.createJobForm.value.minpay!;

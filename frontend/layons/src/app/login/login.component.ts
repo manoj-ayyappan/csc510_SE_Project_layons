@@ -30,30 +30,15 @@ export class LoginComponent implements OnInit {
       this.passwordInvalid = this.password === '';
 
       if (!this.usernameInvalid && !this.passwordInvalid) {
-         console.log("Login page: " + this.userName);
-         console.log("Login page: " + this.password);
 
          this.authService.login(this.userName, this.password)
             .subscribe( data => { 
-               console.log("Is Login Success: " + data); 
                if(data) this.router.navigate(['/createprofile']); 
                else this.error = "Incorrect Credentials";
          });
       }
-
-      // if(this.password == ''){
-      //    this.passwordInvalid = true;
-      // }
-      // if(this.userName == ''){
-      //    this.usernameInvalid = true;
-      // }
-      // console.log("Login page: " + this.userName);
-      // console.log("Login page: " + this.password);
-
       this.authService.login(this.userName, this.password)
          .subscribe( data => { 
-            console.log("Is Login Success: " + data); 
-      
             if(data) this.router.navigate(['/createprofile']); 
             else this.error = "Incorrect Credentials";
       });
