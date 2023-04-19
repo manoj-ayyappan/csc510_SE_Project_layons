@@ -19,8 +19,6 @@ app.use(bodyParser.json());
 
 app.listen(3000);
 
-console.log('App running! yay');
-
 // takes a job properties and adds the job to the jobs array and returns the job (works)
 app.post('/jobs', (req, res) => {
   let job = {};
@@ -31,7 +29,6 @@ app.post('/jobs', (req, res) => {
   job.email = req.body.email.toString();
   job.location = req.body.location.toString();
   job.employerName = req.body.employerName.toString();
-  // console.log(typeof(job.payrangemin))
 
   // setting the jobid
   job_id += 1;
@@ -39,8 +36,6 @@ app.post('/jobs', (req, res) => {
 
   // push the object to array
   jobs_array.push(job);
-  // console.log(job);
-  /* res.sendStatus(200); */
   res.send(job);
 });
 
@@ -70,23 +65,13 @@ app.get('/jobs/search', (req, res) => {
     searchObj_arr.push({ jobId: job.jobId, title: job.title });
   });
 
-  res.send(searchObj_arr);
-
-  // // code to get title when given jobid
-
-  // let id_req = req.body.jobId.toString();
-  // // console.log(id_req);
-  // let obj = jobs_array.find(o => (o.jobId == id_req));
-  // res.send(obj.title.toString())
+  res.send(searchObj_arr); 
 });
 
 // returns job with a given job id (works)
 app.get('/jobs/:jobid', (req, res) => {
   let id_req = req.params['jobid'];
-  // console.log(id_req);
   let obj = jobs_array.find((o) => o.jobId == id_req);
-  /* console.log(typeof obj,obj); */
-  // console.log(obj)
   res.send(obj);
 });
 
