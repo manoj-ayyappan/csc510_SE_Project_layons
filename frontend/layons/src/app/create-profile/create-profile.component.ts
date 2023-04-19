@@ -11,6 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CreateProfileComponent {
 
+  // initializes profile parameters
   firstName: string = '';
   lastName: string = '';
   email: string = '';
@@ -21,6 +22,7 @@ export class CreateProfileComponent {
 
   constructor(private router: Router, private profileService: ProfileService) { }
 
+  /// function to handle submmit
   onSubmit() {
     this.profile.firstName = this.firstName;
     this.profile.lastName = this.lastName;
@@ -55,6 +57,7 @@ export class CreateProfileComponent {
     this.profileService.setProfileData(this.profile);
     alert('Profile Created');
 
+    // redirects to profile page after creation
     this.router.navigateByUrl('/profile');
   }
 

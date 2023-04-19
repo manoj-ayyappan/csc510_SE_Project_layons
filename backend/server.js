@@ -3,10 +3,14 @@ const fs = require('fs');
 const cors = require('cors');
 const formidable = require('express-formidable');
 const form = formidable({ uploadDir: __dirname, keepExtensions: true });
+
+// initialize express app
 const app = express();
+
 app.use(cors());
 app.use('/resume', formidable({ uploadDir: __dirname, keepExtensions: true }));
 
+// initialization
 let job_id = 0;
 let user_id = 0;
 let text = [];
@@ -17,9 +21,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// start listening on port 3000
 app.listen(3000);
 
-// takes a job properties and adds the job to the jobs array and returns the job (works)
+// takes a job properties and adds the job to the jobs array and returns the job
 app.post('/jobs', (req, res) => {
   let job = {};
   job.title = req.body.title.toString();
@@ -39,7 +44,7 @@ app.post('/jobs', (req, res) => {
   res.send(job);
 });
 
-// get all jobs (works)
+// get all jobs
 app.get('/jobs/all-jobs', (req, res) => {
   let jobs_arr = [];
   for (let i = 0, len = jobs_array.length; i < len; i++) {
@@ -48,7 +53,7 @@ app.get('/jobs/all-jobs', (req, res) => {
   res.send(jobs_arr);
 });
 
-// get all users (works)
+// get all users
 app.get('/users/all-users', (req, res) => {
   let users_arr = [];
   for (let i = 0, len = users_array.length; i < len; i++) {
@@ -75,9 +80,12 @@ app.get('/jobs/:jobid', (req, res) => {
   res.send(obj);
 });
 
+// handles file upload for resume and stores path
 app.post('/resume', (req, res) => {
   resume = req.files.file_upload.path;
 });
+
+// returns resume for download
 app.get('/resume', (req, res) => {
   res.download(resume);
 });
@@ -125,6 +133,7 @@ let jobs_array = [
     location: 'Raleigh',
   },
 ];
+
 // sample users array
 let users_array = [
   {

@@ -10,8 +10,10 @@ import { Job } from '../job';
   templateUrl: './job-page.component.html',
   styleUrls: ['./job-page.component.css'],
 })
+
 export class JobPageComponent implements OnInit {
-  /*  Default Job ID is -1, check for a valid jobID before doing calls to DB*/
+
+  // initializes job parameters
   jobid: string = '-1';
   jobDetails: Job | undefined;
   applied: boolean=false;
@@ -27,25 +29,36 @@ export class JobPageComponent implements OnInit {
       }
     );
   }
+
+  // initializes job parameters with existing details by jobid
   ngOnInit() {
-    
     this.jobsservice.getJob(this.jobid).subscribe((job) => {
       this.jobDetails = job;
     });
   }
+
+  // handles on click apply
   apply() {
     this.applied = true;
   }
+
+  // handles on click logout for navbar
   onLogout(){
     this.authService.logout();
     this.router.navigateByUrl('/login');
   }
+
+  // handles on click search for navbar
   onClickSearch(){
     this.router.navigateByUrl('/search');
   }
+
+  // handles on click create jobs for navbar
   onClickCreateJobs(){
     this.router.navigateByUrl('/create');
   }
+
+  // handles on click profile for navbar
   onClickProfile(){
     this.router.navigateByUrl('/profile');
   }

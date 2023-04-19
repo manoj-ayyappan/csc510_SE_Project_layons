@@ -14,11 +14,8 @@ import { SearchComponent } from '../search/search.component';
   styleUrls: ['./create-jobs.component.css'],
 })
 export class CreateJobsComponent {
-  /* Create Jobs page, get position, job desc, email, employer name, pay range, location from user */
-  /* Once received, make a POST request to the backend with those details */
-  /* On success, redirect to Create Jobs Page, maybe with a success message */
-  /* The variables taken from input */
 
+  // initializes form controls with validation
   createJobForm = new FormGroup({
     title: new FormControl('', Validators.required),
     employerName: new FormControl('', Validators.required),
@@ -31,6 +28,7 @@ export class CreateJobsComponent {
 
   constructor(private jobsservice: JobsService, private router: Router, private authService: AuthService) {}
 
+  // function to handle submit
   onSubmit() {
     const title: string = this.createJobForm.value.title!;
     const description = this.createJobForm.value.description!;
@@ -59,10 +57,6 @@ export class CreateJobsComponent {
       alert("Please enter an Email");
       return;
     }
-    // if (!validateEmail(this.createJobForm.value.email == "")){
-    //   alert("Please enter a valid Email");
-    //   return;
-    // }
     if (this.createJobForm.value.location == '') {
       alert("Please enter a Location");
       return;
@@ -71,8 +65,9 @@ export class CreateJobsComponent {
       alert("Please enter an employer Name");
       return;
     }
+
+    // creates job object to send to backend
     const postJob: Job = {
-      // /ID is set in backend/
       title,
       description,
       payrangemax,
@@ -81,22 +76,31 @@ export class CreateJobsComponent {
       location,
       employerName,
     };
+
+    // makes POST request to backend to create the job
     this.jobsservice.createjob(postJob).subscribe((job) => {
       alert('Added ' + job.title);
     });
   }
+
+  // handles on click profile for navbar
   onClickProfile(){
     this.router.navigateByUrl('/profile')
   }
+
+  // handles on click logout for navbar
   onLogout(){
     this.authService.logout();
     this.router.navigateByUrl('/login');
   }
+
+  // handles on click search for navbar
   onClickSearch(){
     this.router.navigateByUrl('/search');
   }
 }
 
+// handles email validation
 function validateEmail(email: string): boolean {
   // Regular expression for email validation
   const emailRegex = new RegExp('/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/');

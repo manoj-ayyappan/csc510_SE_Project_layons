@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+   // initializes login parameters
    userName: string;
    password: string;
    error: string;
@@ -25,18 +26,21 @@ export class LoginComponent implements OnInit {
 
    ngOnInit() {}
 
+   // handles on click submit
    onClickSubmit() {
       this.usernameInvalid = this.userName === '';
       this.passwordInvalid = this.password === '';
 
+      // handles invalid credentials
       if (!this.usernameInvalid && !this.passwordInvalid) {
-
          this.authService.login(this.userName, this.password)
             .subscribe( data => { 
                if(data) this.router.navigate(['/createprofile']); 
                else this.error = "Incorrect Credentials";
          });
       }
+
+      // handles valid credentials
       this.authService.login(this.userName, this.password)
          .subscribe( data => { 
             if(data) this.router.navigate(['/createprofile']); 

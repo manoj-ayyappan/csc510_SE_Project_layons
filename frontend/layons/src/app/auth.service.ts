@@ -11,13 +11,18 @@ import { User } from './user';
 export class AuthService {
 
    constructor(private userservice: UserService) {}
+
+   // initializes list of users and isUserLoggedIn
    usersList: User[] = [];
 
    isUserLoggedIn: boolean = false;
+
+   // gets all users from User.service
    users = this.userservice.getAllUsers().subscribe((usersList) => {
       this.usersList = usersList;
     });
 
+   // handles user login
    login(userName: string, password: string): Observable<any> {
       for(let i =0; i<this.usersList.length; i++){
          if(this.usersList[i].userName == userName && this.usersList[i].password == password){
@@ -30,14 +35,15 @@ export class AuthService {
             localStorage.setItem('isUserLoggedIn', 'false');
          }
       }
-
+   
+   // returns result of user authentication
    return of(this.isUserLoggedIn).pipe(
-      //delay(1000),
       tap(val => {
       })
    );
    }
 
+   // handles user logout
    logout(): void {
       this.isUserLoggedIn = false;
       localStorage.removeItem('isUserLoggedIn'); 

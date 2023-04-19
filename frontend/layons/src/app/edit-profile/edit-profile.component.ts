@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent {
+
+  // initializes profile parameters
   firstName: string='';
   lastName: string='';
   email: string='';
@@ -19,6 +21,7 @@ export class EditProfileComponent {
     this.profile=this.profileService.getProfileData();
   }
 
+  // initializes profile parameters with existing values
   ngOnInit(){
     this.firstName=this.profile.firstName;
     this.lastName=this.profile.lastName;
@@ -28,6 +31,7 @@ export class EditProfileComponent {
     this.resume=this.profile.resume;
   }
 
+  // handles on click save
   onSave(){
     if (this.firstName == '') {
       alert("Need first name");
@@ -62,6 +66,8 @@ export class EditProfileComponent {
     this.profile.resume = this.resume;
     this.profileService.setProfileData(this.profile);
     alert('Profile Updated');
+
+    // redirects to profile on successful updation
     this.router.navigateByUrl('/profile');
     
   }
