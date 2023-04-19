@@ -1,12 +1,14 @@
+import { async } from '@angular/core/testing';
 import { Given, When, Then } from '@cucumber/cucumber';
 const { browser, $, element, by, protractor } = require('protractor');
+import { Job } from 'src/app/job';
 let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
 
 let jobLinks = [],
   jobsList = [];
 let visitedJob = '';
-let jobDetails = {};
+let jobDetails:Job = {title:"", description:"", payrangemin:-1, payrangemax:-1, email: "", location: "", employerName: ""};
 
 function searchsubsequence(query: string, jobName: string) {
   if (!query) return true;
@@ -36,6 +38,7 @@ When('I enter a job’s name as {string}', async (jobName) => {
 
 When('I click the button called Search', async () => {
   await element(by.buttonText('Search')).click();
+  await browser.sleep(2000);
 });
 
 Then('I am given a list of jobs that match {string}', async (string) => {
@@ -46,13 +49,20 @@ Then('I am given a list of jobs that match {string}', async (string) => {
     .map((el: any) => {
       return el.getText();
     });
+    jobNames = jobNames.map((name:string) => {
+      return name.replace('Apply',"");
+    })
+    jobNames = jobNames.map((name:string) => {
+      return name.replaceAll(/\s/g,'');
+    })
+  string = string.replaceAll(/\s/g,'');
   let allStringsmatch = true;
   jobNames.forEach((jobName: string) => {
     allStringsmatch = allStringsmatch && searchsubsequence(string, jobName);
   });
   expect(allStringsmatch).to.be.true;
 });
-Then('all the job listings have a button “Apply”', async () => {
+Then('all the job listings have a button Apply', async () => {
   let applyButtonsList: boolean[] = await $('ul')
     .all(by.css('li .job-link button'))
     .map(async (el: any) => {
@@ -68,26 +78,39 @@ Then('all the job listings have a button “Apply”', async () => {
   ).to.be.true;
 });
 
-When(
-  'I click the button “Apply” of {string} from that list',
+When('I click the button Apply of {string} from that list',
   async (jobName) => {
-    /* console.log(`Here ${jobName}`); */
     let jobButton: any = null;
-    await element(by.css('ul'))
-      .all(by.css('li .job-name'))
-      .each(async (el: any) => {
-        if ((await el.getAttribute('innerText')) == jobName) {
+    let jobnames = await element.all(by.css("li .job-name")).each(async (el:any) => {
+
+    })
+  //   console.log(jobnames);
+  //  jobnames.forEach(async (el: any) =>{
+  //   console.log(await el.getText());
+
+  //     console.log(await el.getAttribute("innerText"));
+  //   })
+    jobName = jobName.replaceAll(/\s/g,'');
+    await element(by.css('ul')).all(by.css('li .job-name')).each(async (el: any) => {
+        let job = (await el.getAttribute('innerText'));
+        job = job.replaceAll("Apply","");
+        job = job.replaceAll(/\s/g,'');
+        // console.log(job, jobName);
+        if (job == jobName) {
           console.log('Here3');
           jobButton = await el
             .element(by.xpath('..'))
-            .element(by.css('button a'));
+            .element(by.css('.joblink a'));
           visitedJob = await jobButton.getAttribute('href');
+          // console.log(visitedJob, jobButton);
         }
       });
     console.log('Here', visitedJob);
     console.log('Here', jobButton);
     let jobid = visitedJob.substring(visitedJob.lastIndexOf('/') + 1);
-    jobDetails = await fetch(`http://localhost:3000/jobs/${jobid}`);
+    // jobDetails = await fetch(`http://localhost:3000/jobs/${jobid}`);
+    let Response = await fetch(`http://localhost:3000/jobs/${jobid}`);
+    jobDetails = await Response.json();
     expect(jobButton).to.not.be.null;
     if (jobButton != null) {
       console.log('Here', jobButton, visitedJob);
@@ -97,48 +120,53 @@ When(
 );
 
 Then('I am redirected to the job page of that particular job', async () => {
+  // await browser.sleep(2000);
   expect(await browser.getCurrentUrl()).to.equal(visitedJob);
 });
 
 Then(
   'I can see job details such as job description, employer’s email, employer’s name, pay range, work location',
   async () => {
-    // let input = await $('span.title');
-    // let title = await input.getText();
-    // input = await $('span.description');
-    // let desc = await input.getText();
-    // input = await $('span.payrangemin');
-    // let minpay = await input.getText();
-    // input = await $('span.payrangemax');
-    // let maxpay = await input.getText();
-    // input = await $('span.email');
-    // let email = await input.getText();
-    // input = await $('span.location');
-    // let location = await input.getText();
-    // input = await $('span.employerName');
-    // let employerName = await input.getText();
-    // expect(title).to.eventually.equal(jobDetails.title);
-    // expect(description).to.eventually.equal(jobDetails.description);
-    // expect(payrangemax).to.eventually.equal(jobDetails.payrangemax);
-    // expect(payrangemin).to.eventually.equal(jobDetails.payrangemin);
-    // expect(email).to.eventually.equal(jobDetails.email);
-    // expect(location).to.eventually.equal(jobDetails.location);
-    // expect(employerName).to.eventually.equal(jobDetails.employerName);
+    let input = await $('span.title');
+    let title = await input.getText();
+    input = await $('span.description');
+    let desc = await input.getText();
+    input = await $('span.payrangemin');
+    let minpay = await input.getText();
+    input = await $('span.payrangemax');
+    let maxpay = await input.getText();
+    input = await $('span.email');
+    let email = await input.getText();
+    input = await $('span.location');
+    let location = await input.getText();
+    input = await $('span.employerName');
+    let employerName = await input.getText();
+    // if (!jobDetails.title){
+    //   return;
+    // }
+    expect(title).to.equal(jobDetails.title);
+    expect(desc).to.equal(jobDetails.description);
+    expect(Number(maxpay)).to.equal(jobDetails.payrangemax);
+    expect(Number(minpay)).to.equal(jobDetails.payrangemin);
+    expect(email).to.equal(jobDetails.email);
+    expect(location).to.equal(jobDetails.location);
+    expect(employerName).to.equal(jobDetails.employerName);
   }
 );
 
-When('I click on “Apply” button to apply for that job', () => {
-  // await element(by.buttonText('Apply')).click();
+When('I click on Apply button to apply for that job', async () => {
+  await element(by.buttonText('Apply')).click();
+  await browser.sleep(2000);
 });
 
-Then('A message is displayed “Applied Successfully”', () => {
-  // let ele = await element(by.buttonText('Applied'));
-  // let exists = ele.isPresent();
-  // expect(exists).to.be.true;
+Then('A message is displayed Applied Successfully', async () => {
+  let ele = await element(by.buttonText('Applied Successfully'));
+  let exists = await ele.isPresent();
+  expect(exists).to.be.true;
 });
 
 Then('I stay on the same page at the end', async () => {
-  // let url = await browser.getCurrentUrl();
-  // expect(await browser.getTitle()).to.eventually.equal('Layons');
-  // expect(url).to.equal(visitedJob);
+  let url = await browser.getCurrentUrl();
+  expect(browser.getTitle()).to.eventually.equal('Layons');
+  expect(url).to.equal(visitedJob);
 });

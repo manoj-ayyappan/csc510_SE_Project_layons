@@ -29,16 +29,41 @@ export class EditProfileComponent {
   }
 
   onSave(){
-    console.log("OnSave Triggered");
+    if (this.firstName == '') {
+      alert("Need first name");
+      return;
+    }
+    if (this.lastName == '') {
+      alert("Need last name");
+      return;
+    }
+    if (this.email == '') {
+      alert("Need email");
+      return;
+    }
+    if (this.location == '') {
+      alert("Need location");
+      return;
+    }
+    if (this.skills == '') {
+      alert("Need skills");
+      return;
+    }
+    if (this.resume == undefined) {
+      alert("Upload resume");
+      return;
+    }
+
     this.profile.firstName = this.firstName;
     this.profile.lastName = this.lastName;
     this.profile.email = this.email;
     this.profile.location = this.location;
     this.profile.skills = this.skills;
     this.profile.resume = this.resume;
-    
     this.profileService.setProfileData(this.profile);
+    alert('Profile Updated');
     this.router.navigateByUrl('/profile');
+    
   }
   onResumeSelected(event: any) {
     this.resume = event.target.files[0];

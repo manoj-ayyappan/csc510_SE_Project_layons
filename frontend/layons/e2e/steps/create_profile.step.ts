@@ -63,61 +63,43 @@ When('I enter my skills {string}', async (string) => {
   input.sendKeys(string);
 });
 
-// let documentUploadService: DocumentUploadService;
-
-
 When('I am asked to upload my resume as a PDF file', async () => {
-  var fileToUpload = '/Users/mansisaxena/Documents/SE/CSC510_SE_PROJECT_Spring23-1/LayOns.pdf',
+  var fileToUpload = '../../../../LayOns.pdf',
       absolutePath = path.resolve(__dirname, fileToUpload);
 
   element(by.css('input[type="file"]')).sendKeys(absolutePath);    
   // element(by.id('uploadButton')).click();
 });
 
-// Given('I have a document upload service', () => {
-//   documentUploadService = new DocumentUploadService();
-// });
-
-// When('I upload my resume as a PDF file', async () => {
-//   const document = { file: 'resume.pdf', size: 10000, type: 'pdf' }; // Define the resume document to be uploaded
-//   const result = documentUploadService.upload(document); // Call the upload method with the resume document
-
-//   // You can add your assertions here to verify the upload behavior, e.g. using Jest expect() statements
-//   expect(result).toBeTruthy(); // Assert that the upload was successful
-//   expect(documentUploadService.getUploadedDocuments()).toContain(document); // Assert that the uploaded document is in the list of uploaded documents
-// });
-
 When('I click on Submit button', async () => {
-  await browser.sleep(2000);
-
   await browser.executeScript('window.scrollTo(0,200);')
   // await element(by.buttonText('Submit')).click();
 
   let button = await element(by.buttonText('Submit'));
   await (browser.actions().mouseMove(button).click().perform());
+  // await browser.sleep(2000);
+
 });
 
-//   how to check is "Profile Created" message is displayed
+
 Then('I am displayed a success message saying "Profile Created"', async () => {
-  // let EC = protractor.ExpectedConditions;
-  // await browser.wait(
-  //   EC.alertIsPresent(),
-  //   5000,
-  //   'Alert is not getting present :('
-  // );
-  // browser.wait(function () {
-  //   return browser.switchTo().alert().then(
-  //     //alert present
-  //     function () { return true; },
-  //     //alert not present
-  //     function () { return false; }
-  //   );
-  // }, 3000);
-  // var popupAlert = browser.switchTo().alert();
-  // let alertText = popupAlert.getText();
-  // console.log(alertText);
-  // popupAlert.accept();
-  // await browser.switchTo().alert().accept();
+  let EC = protractor.ExpectedConditions;
+  await browser.wait(
+    EC.alertIsPresent(),
+    5000,
+    'Alert is not getting present :('
+  );
+  let popup = await browser.switchTo().alert();
+  let alertText = await popup.getText();
+  popup.accept();
+  expect(alertText == "Profile Created");
 });
 
+Then('I am navigated to the profile details page', function () {
+  
+});
 
+// click submit 
+// --> opens added profile alert 
+// --> click mclose button 
+// --> leads to profile details page

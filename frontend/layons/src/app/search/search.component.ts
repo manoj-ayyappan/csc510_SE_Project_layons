@@ -66,6 +66,10 @@ export class SearchComponent implements OnInit {
     if (this.queryControl.value != null) {
       query = this.queryControl.value;
     }
+    if (this.queryControl.value == "") {
+      alert("Please enter a job");
+      return;
+    }
     this.doSearch(query);
   }
 }

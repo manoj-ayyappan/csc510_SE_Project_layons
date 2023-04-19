@@ -78,8 +78,6 @@ When('I fill in location as {string}', async (string) => {
 
 When('I fill in employer name as {string}', async (string) => {
   let input = await $("input[name='employerName']");
-  // console.log(input);
-  // console.log("input is",string)
   await input.sendKeys(string);
   await browser.sleep(2000);
   await browser.executeScript('window.scrollTo(0,200);')
@@ -134,7 +132,6 @@ Then('I can see the job posted', async () => {
       return name.replaceAll(/\s/g,'');
   });
   jobName = jobName.replaceAll(/\s/g,'');
-  console.log(jobNames,jobName);
   let jobExists = false;
   jobNames.forEach((job) => {
     jobExists = jobExists || job.includes(jobName);

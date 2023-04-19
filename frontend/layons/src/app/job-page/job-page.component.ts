@@ -29,8 +29,7 @@ export class JobPageComponent implements OnInit {
     );
   }
   ngOnInit() {
-    /Valid Job ID here/
-    /* jobDetails: Job; */
+    
     this.jobsservice.getJob(this.jobid).subscribe((job) => {
       console.log(job);
       this.jobDetails = job;

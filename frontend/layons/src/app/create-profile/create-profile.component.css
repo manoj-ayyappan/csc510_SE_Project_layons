@@ -109,18 +109,19 @@ t {
 
 
 .btn-primary{
-    background-color: #6C757D;
+    background-color: #495056;
     outline: none;
     border: 0px;
-     box-shadow: none;
+    box-shadow: none;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
-    background-color: #495056;
+    background-color: green;
     outline: none !important;
     border: none !important;
      box-shadow: none;
 }
+
 
 .form-content textarea {
     position: static !important;
@@ -160,3 +161,19 @@ t {
 .valid-feedback{
    color: #2acc80;
 }
+
+.topnav {
+    background-color: #152733;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+.navbar-brand {
+    display: inline-block;
+    height: auto;
+    width: 100px;
+    padding:0%;
+  }

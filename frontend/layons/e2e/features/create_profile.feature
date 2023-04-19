@@ -14,3 +14,4 @@ Feature: Create Profile
         And I am asked to upload my resume as a PDF file
         When I click on Submit button
         Then I am displayed a success message saying "Profile Created"
+        Then I am navigated to the profile details page
