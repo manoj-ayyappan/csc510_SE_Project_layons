@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "npm run e2e",
     "start-server": "npm start",
-    "test": "npm run e2e",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
@@ -22,11 +21,13 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "@serenity-js/web": "^3.1.6",
     "chai-as-promised": "^7.1.1",
     "fuse.js": "^6.6.2",
     "fuzzysort": "^2.0.4",
     "nodemon": "^2.0.22",
     "rxjs": "~7.8.0",
+    "ts-node": "^10.9.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
