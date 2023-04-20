@@ -2,7 +2,10 @@
 
 [![Tests](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml)
 
-![Test eg](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)
+
+
+![GitHub repo size](https://img.shields.io/github/repo-size/manoj-ayyappan/csc510_SE_Project_layons)
+![Lines of code](https://img.shields.io/tokei/lines/github/manoj-ayyappan/csc510_SE_Project_layons)
 
 <img src="https://img.shields.io/codacy/coverage/github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23"></img>
 <img src="https://img.shields.io/github/languages/code-size/sswattam/CSC510_SE_PROJECT_Spring23"></img>
