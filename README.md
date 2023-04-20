@@ -1,7 +1,6 @@
 # CSC510 Software Engineering Project Spring23 - LayOns
 
-<!-- [![Tests](https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml/badge.svg)](https://github.com/sswattam/CSC510_SE_PROJECT_Spring23/actions/workflows/testing.yaml) -->
-
+[![Testing workflow](https://github.com/manoj-ayyappan/csc510_SE_Project_layons/actions/workflows/testing.yaml/badge.svg)](https://github.com/manoj-ayyappan/csc510_SE_Project_layons/actions/workflows/testing.yaml)
 
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/manoj-ayyappan/csc510_SE_Project_layons)
