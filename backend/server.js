@@ -17,7 +17,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.listen(3000);
+let server = app.listen(3000);
 
 console.log('App running! yay');
 
@@ -116,10 +116,11 @@ let users_array = [
     userId: 3,
     userName: 'Manoj',
     password: 'password',
-  }, {
-
+  },
+  {
     userId: 4,
     userName: 'sourabh',
     password: 'sourabh',
-  }
+  },
 ];
+module.exports = server;
