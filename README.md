@@ -7,8 +7,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/manoj-ayyappan/csc510_SE_Project_layons)
 ![Lines of code](https://img.shields.io/tokei/lines/github/manoj-ayyappan/csc510_SE_Project_layons)
 
-<img src="https://img.shields.io/codacy/coverage/github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23"></img>
-<img src="https://img.shields.io/github/languages/code-size/sswattam/CSC510_SE_PROJECT_Spring23"></img>
+<img src="https://img.shields.io/codacy/coverage/github/sriram2000na/csc510_SE_Project_layons"></img>
+<img src="https://img.shields.io/github/languages/code-size/sriram2000na/csc510_SE_Project_layons"></img>
 
 ## Table of Contents
 1. [Introduction](#introduction)
