@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: '18.x'
       - name: install dependencies
-        working-directory: ./CSC510_SE_PROJECT_Spring23/backend/
+        working-directory: ./backend/
         run: npm install
         shell: bash
       - name: run tests
-        working-directory: ./CSC510_SE_PROJECT_Spring23/backend/
+        working-directory: ./backend/
         run: npm run test
         shell: bash
   frontend-GUI-tests:
@@ -42,17 +42,17 @@ jobs:
           npm install -g protractor
         shell: bash
       - name: install dependencies for server
-        working-directory: ./CSC510_SE_PROJECT_Spring23/backend/
+        working-directory: ./backend/
         run: |
           npm install
           (node server.js) &
       - name: install angular dependencies
-        working-directory: ./CSC510_SE_PROJECT_Spring23/frontend/layons
+        working-directory: ./frontend/layons
         run: |
           npm install
         shell: bash
       - name: run the server, client and start tests
-        working-directory: ./CSC510_SE_PROJECT_Spring23/frontend/layons
+        working-directory: ./frontend/layons
         run: |
           sudo ss -lptn 'sport = :3000'
           npx start-test http://localhost:4200
