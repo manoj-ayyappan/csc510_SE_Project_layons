@@ -2,9 +2,8 @@
 
 [![Testing workflow](https://github.com/manoj-ayyappan/csc510_SE_Project_layons/actions/workflows/testing.yaml/badge.svg)](https://github.com/manoj-ayyappan/csc510_SE_Project_layons/actions/workflows/testing.yaml)
 
-
-![GitHub repo size](https://img.shields.io/github/repo-size/manoj-ayyappan/csc510_SE_Project_layons)
-![Lines of code](https://img.shields.io/tokei/lines/github/manoj-ayyappan/csc510_SE_Project_layons)
+![GitHub issues](https://img.shields.io/github/issues-raw/manoj-ayyappan/csc510_SE_Project_layons)  ![GitHub pull requests](https://img.shields.io/github/issues-pr/manoj-ayyappan/csc510_SE_Project_layons)  ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/manoj-ayyappan/csc510_SE_Project_layons) ![GitHub repo size](https://img.shields.io/github/repo-size/manoj-ayyappan/csc510_SE_Project_layons)
+![Lines of code](https://img.shields.io/tokei/lines/github/manoj-ayyappan/csc510_SE_Project_layons) ![GitHub contributors](https://img.shields.io/github/contributors/manoj-ayyappan/csc510_SE_Project_layons)
 
 <!-- <img src="https://img.shields.io/codacy/coverage/github/sriram2000na/csc510_SE_Project_layons"></img> -->
 <!-- <img src="https://img.shields.io/github/languages/code-size/sriram2000na/csc510_SE_Project_layons"></img> -->
