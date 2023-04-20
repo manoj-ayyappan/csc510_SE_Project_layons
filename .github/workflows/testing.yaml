@@ -1,0 +1,59 @@
+name: Testing workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  backend-service-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: install dependencies
+        working-directory: ./CSC510_SE_PROJECT_Spring23/backend/
+        run: npm install
+        shell: bash
+      - name: run tests
+        working-directory: ./CSC510_SE_PROJECT_Spring23/backend/
+        run: npm run test
+        shell: bash
+  frontend-GUI-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: nanasess/setup-chromedriver@v1
+        with:
+          chromedriver-version: '110.0.5481.77'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - uses: browser-actions/setup-chrome@v1
+      - name: install angular-cli and protractor
+        run: |
+          npm install -g @angular/cli@15.1.5
+          npm install ts-node
+          npm install -g protractor
+        shell: bash
+      - name: install dependencies for server
+        working-directory: ./CSC510_SE_PROJECT_Spring23/backend/
+        run: |
+          npm install
+          (node server.js) &
+      - name: install angular dependencies
+        working-directory: ./CSC510_SE_PROJECT_Spring23/frontend/layons
+        run: |
+          npm install
+        shell: bash
+      - name: run the server, client and start tests
+        working-directory: ./CSC510_SE_PROJECT_Spring23/frontend/layons
+        run: |
+          sudo ss -lptn 'sport = :3000'
+          npx start-test http://localhost:4200
+        shell: bash
