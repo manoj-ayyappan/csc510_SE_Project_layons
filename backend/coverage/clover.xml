@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1681952584022" clover="3.2.0">
+  <project timestamp="1681952584022" name="All files">
+    <metrics statements="57" coveredstatements="55" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="7" elements="66" coveredelements="62" complexity="0" loc="57" ncloc="57" packages="1" files="1" classes="1"/>
+    <file name="server.js" path="/Users/sourabh/Desktop/SE/Project/LayOns/CSC510_SE_PROJECT_Spring23/backend/server.js">
+      <metrics statements="57" coveredstatements="55" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="7"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="49" count="2" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="53" count="2" type="stmt"/>
+      <line num="57" count="1" type="stmt"/>
+      <line num="58" count="2" type="stmt"/>
+      <line num="59" count="2" type="stmt"/>
+      <line num="60" count="4" type="stmt"/>
+      <line num="62" count="2" type="stmt"/>
+      <line num="66" count="1" type="stmt"/>
+      <line num="67" count="1" type="stmt"/>
+      <line num="68" count="1" type="stmt"/>
+      <line num="69" count="1" type="stmt"/>
+      <line num="70" count="2" type="stmt"/>
+      <line num="73" count="1" type="stmt"/>
+      <line num="84" count="1" type="stmt"/>
+      <line num="85" count="1" type="stmt"/>
+      <line num="87" count="1" type="stmt"/>
+      <line num="90" count="1" type="stmt"/>
+      <line num="93" count="1" type="stmt"/>
+      <line num="94" count="0" type="stmt"/>
+      <line num="96" count="1" type="stmt"/>
+      <line num="97" count="0" type="stmt"/>
+      <line num="101" count="1" type="stmt"/>
+      <line num="114" count="1" type="stmt"/>
+      <line num="126" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
