@@ -10,7 +10,7 @@ Given('I am at the home page', async () => {
   await input.sendKeys("Manoj");
   input = await $("input[name='password']");
   input.sendKeys("password");
-  await element(by.buttonText('Log in')).click();
+  await element(by.buttonText('Log In')).click();
 });
 
 When('I log in for the first time', async () => {
@@ -77,8 +77,6 @@ When('I click on Submit button', async () => {
 
   let button = await element(by.buttonText('Submit'));
   await (browser.actions().mouseMove(button).click().perform());
-  // await browser.sleep(2000);
-
 });
 
 
@@ -93,10 +91,6 @@ Then('I am displayed a success message saying "Profile Created"', async () => {
   let alertText = await popup.getText();
   popup.accept();
   expect(alertText == "Profile Created");
-});
-
-Then('I am navigated to the profile details page', function () {
-  
 });
 
 // click submit 

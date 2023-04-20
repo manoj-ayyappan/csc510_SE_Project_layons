@@ -38,7 +38,6 @@ When('I enter a job’s name as {string}', async (jobName) => {
 
 When('I click the button called Search', async () => {
   await element(by.buttonText('Search')).click();
-  await browser.sleep(2000);
 });
 
 Then('I am given a list of jobs that match {string}', async (string) => {
@@ -84,43 +83,31 @@ When('I click the button Apply of {string} from that list',
     let jobnames = await element.all(by.css("li .job-name")).each(async (el:any) => {
 
     })
-  //   console.log(jobnames);
-  //  jobnames.forEach(async (el: any) =>{
-  //   console.log(await el.getText());
-
-  //     console.log(await el.getAttribute("innerText"));
-  //   })
     jobName = jobName.replaceAll(/\s/g,'');
     await element(by.css('ul')).all(by.css('li .job-name')).each(async (el: any) => {
         let job = (await el.getAttribute('innerText'));
         job = job.replaceAll("Apply","");
         job = job.replaceAll(/\s/g,'');
-        // console.log(job, jobName);
         if (job == jobName) {
-          console.log('Here3');
+          
           jobButton = await el
             .element(by.xpath('..'))
             .element(by.css('.joblink a'));
           visitedJob = await jobButton.getAttribute('href');
-          // console.log(visitedJob, jobButton);
         }
       });
-    console.log('Here', visitedJob);
-    console.log('Here', jobButton);
     let jobid = visitedJob.substring(visitedJob.lastIndexOf('/') + 1);
     // jobDetails = await fetch(`http://localhost:3000/jobs/${jobid}`);
     let Response = await fetch(`http://localhost:3000/jobs/${jobid}`);
     jobDetails = await Response.json();
     expect(jobButton).to.not.be.null;
     if (jobButton != null) {
-      console.log('Here', jobButton, visitedJob);
       await jobButton.click();
     }
   }
 );
 
 Then('I am redirected to the job page of that particular job', async () => {
-  // await browser.sleep(2000);
   expect(await browser.getCurrentUrl()).to.equal(visitedJob);
 });
 
@@ -156,7 +143,6 @@ Then(
 
 When('I click on Apply button to apply for that job', async () => {
   await element(by.buttonText('Apply')).click();
-  await browser.sleep(2000);
 });
 
 Then('A message is displayed Applied Successfully', async () => {

@@ -12,7 +12,7 @@ Given('I am logged in', async () => {
   await input.sendKeys('sourabh');
   input = await $("input[name='password']");
   input.sendKeys('sourabh');
-  await element(by.buttonText('Log in')).click();
+  await element(by.buttonText('Log In')).click();
 });
 
 When('I am inside the Create Jobs page', async () => {
@@ -79,18 +79,10 @@ When('I fill in location as {string}', async (string) => {
 When('I fill in employer name as {string}', async (string) => {
   let input = await $("input[name='employerName']");
   await input.sendKeys(string);
-  await browser.sleep(2000);
   await browser.executeScript('window.scrollTo(0,200);')
   let button = await element(by.buttonText('Submit'));
   
   await (browser.actions().mouseMove(button).click().perform());
-
-  // await browser.sleep(1000);
-  // /* Needs search functionality to complete the remaining portion of the test
-  //    For now, an alert is being used just to ensure a job is added
-  //    When phase 3 is complete, we need to change the below lines
-  //    to handle the search part of the feature
-  // */
   let EC = protractor.ExpectedConditions;
   await browser.wait(
     EC.alertIsPresent(),
