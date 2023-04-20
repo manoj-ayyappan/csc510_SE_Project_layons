@@ -1,3 +1,5 @@
+<img src="/frontend/layons/src/assets/logo.png" alt="Logo" width="auto" height="auto"> 
+
 # CSC510 Software Engineering Project Spring23 - LayOns
 
 
@@ -51,6 +53,7 @@ To run LayOns locally, follow these steps:
 
 1. Clone the repository to your local machine using `git clone https://github.ncsu.edu/sswattam/CSC510_SE_PROJECT_Spring23.git`
 2. Navigate to the FRONTEND directory `CSC510_SE_PROJECT_Spring23/frontend/layons` and run `npm install` to install the dependencies for the frontend.
+3. Run these commands to install required frameworks: `npm install i` | `npm i @serenity-js/web` | `npm i ts-node`
 3. Navigate to the BACKEND directory `CSC510_SE_PROJECT_Spring23/backend` and run `npm install` to install the dependencies for the backend.
 4. Start the Angular development server by running `ng serve` OR `npm start` in the FRONTEND directory.
 5. Start the Node.js backend server by running `node server.js` in the BACKEND directory.
