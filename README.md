@@ -27,8 +27,7 @@
 3. [Getting Started](#getting-started)
 4. [Directory Structure](#directory-structure)
 5. [Contribution](#contribution)
-6. [Support](#support)
-7. [Contributors](#contributors)
+6. [Support and Contributors](#support-and-contributors)
 
 ## Introduction
 The LayOns (Job Search Portal), is a web application that allows users to search for job opportunities and apply for jobs. Along with this users can also post job openings in their institution. The project is built using Angular and Node.js, and it serves as a showcase for software engineering learnings. The repository contains all the code, documentation, and resources related to the project.
@@ -192,7 +191,7 @@ We welcome contributions to the project! If you would like to contribute, please
 8. Provide a detailed description of your changes in the pull request.
 9. Await feedback from the project maintainers and address any comments or issues raised.
 
-## Support
+## Support and Contributors
 
 We do our best to answer all tickets in a timely manner, but sometimes we accumulate a backlog and may take awhile to respond. Please be patient - we will get back to you as soon as we can!
 
@@ -204,5 +203,4 @@ Please do contact any of us:
 4. [Mansi Saxena](msaxena4@ncsu.edu)
 5. [Karthik Narayanan Gopala Sundaresan](kgopala3@ncsu.edu)
 
-## Contributors
 Thanks goes to [these](https://github.com/sriram2000na/csc510_SE_Project_layons/graphs/contributors) people for developing LayOns!
