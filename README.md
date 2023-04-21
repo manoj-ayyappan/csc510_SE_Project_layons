@@ -1,6 +1,6 @@
 <img src="/frontend/layons/src/assets/logo.png" alt="Logo" width="auto" height="auto"> 
 
-# CSC510 Software Engineering Project Spring23 - LayOns
+# CSC510 Software Engineering Project Spring'23 - LayOns
 
 
 [![Testing workflow](https://github.com/manoj-ayyappan/csc510_SE_Project_layons/actions/workflows/testing.yaml/badge.svg)](https://github.com/manoj-ayyappan/csc510_SE_Project_layons/actions/workflows/testing.yaml)  [![DOI](https://zenodo.org/badge/630275621.svg)](https://zenodo.org/badge/latestdoi/630275621)
@@ -69,6 +69,7 @@ Below are the config files:
 
     .
     ├── LayOns.pdf
+    ├── LayOns - Presentation.pptx
     ├── backend
     │   ├── api.test.js
     │   ├── db.json
